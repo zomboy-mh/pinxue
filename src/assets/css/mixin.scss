@@ -30,18 +30,27 @@
   [data-theme=theme1] & {
     background: $background-color-theme1;
   }
-  [data-theme=theme2] & {
-    background: $background-color-theme2;
+  //[data-theme=theme2] & {
+  //  background: $background-color-theme2;
+  //}
+}
+@mixin bg_active_color(){
+  color: $background_active-color-theme;
+  [data-theme=theme1] & {
+    background: $background_active-color-theme1;
   }
+  //[data-theme=theme2] & {
+  //  background: $background_active-color-theme2;
+  //}
 }
 @mixin bg_sub_color(){
   background: $background-color-sub-theme;
   [data-theme=theme1] & {
     background: $background-color-sub-theme1;
   }
-  [data-theme=theme2] & {
-    background: $background-color-sub-theme2;
-  }
+  //[data-theme=theme2] & {
+  //  background: $background-color-sub-theme2;
+  //}
 }
 
 @mixin font_color(){
@@ -49,18 +58,18 @@
   [data-theme=theme1] & {
     color: $font-color-theme1;
   }
-  [data-theme=theme2] & {
-    color: $font-color-theme2;
-  }
+  //[data-theme=theme2] & {
+  //  color: $font-color-theme2;
+  //}
 }
 @mixin font_active_color(){
   color: $font-active-color-theme;
   [data-theme=theme1] & {
     color: $font-active-color-theme1;
   }
-  [data-theme=theme2] & {
-    color: $font-active-color-theme2;
-  }
+  //[data-theme=theme2] & {
+  //  color: $font-active-color-theme2;
+  //}
 }
 
 @mixin border_color(){
@@ -68,9 +77,9 @@
   [data-theme=theme1] & {
     border-color: $border-color-theme1;
   }
-  [data-theme=theme2] & {
-    border-color: $border-color-theme2;
-  }
+  //[data-theme=theme2] & {
+  //  border-color: $border-color-theme2;
+  //}
 }
 
 @mixin bg_img($url){
@@ -80,9 +89,9 @@
   [data-theme=theme1] & {
     background-image: url($url + '_qq.png');
   }
-  [data-theme=theme2] & {
-    background-image: url($url + '_it666.png');
-  }
+  //[data-theme=theme2] & {
+  //  background-image: url($url + '_it666.png');
+  //}
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -98,11 +107,11 @@
   [data-theme=theme1][data-dpr='3'] & {
     background-image: url($url + '_qq@3x.png');
   }
-  [data-theme=theme2][data-dpr='2'] & {
-    background-image: url($url + '_it666@2x.png');
-  }
-  [data-theme=theme2][data-dpr='3'] & {
-    background-image: url($url + '_it666@3x.png');
-  }
+  //[data-theme=theme2][data-dpr='2'] & {
+  //  background-image: url($url + '_it666@2x.png');
+  //}
+  //[data-theme=theme2][data-dpr='3'] & {
+  //  background-image: url($url + '_it666@3x.png');
+  //}
 }
 

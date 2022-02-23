@@ -16,7 +16,7 @@
       就导致了网页中有两个meta标签
       * */
       let scale = 1.0 / Math.ceil(window.devicePixelRatio);
-      let text = `<meta name="viewport" content="width=device-width, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no">`;
+      let text = `<meta name="viewport" content="width=device-width, initial-scale=${scale.toFixed(2)}, maximum-scale=${scale.toFixed(2)}, minimum-scale=${scale.toFixed(2)}, user-scalable=no">`;
       document.write(text);
       console.log(window.devicePixelRatio);
       document.documentElement.style.fontSize = window.innerWidth / 7.5 + "px";
