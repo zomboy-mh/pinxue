@@ -3,6 +3,7 @@
   <ScrollView>
     <div>
       <Banner :banners = "banners"></Banner>
+      <ContentTabber></ContentTabber>
       <Personalized :Personalized="Personalized" :title="'日结推荐'" @select="fatherSelectItem"></Personalized>
       <Personalized :Personalized="partTime" :title="'全职推荐'"></Personalized>
       <JobList :jobList="jobList"></JobList>
@@ -17,13 +18,15 @@ import Banner from '../components/Banner'
 import Personalized from '../components/Personalized'
 import JobList from '../components/JobList'
 import ScrollView from '../components/ScrollView'
+import ContentTabber from '../components/ContentTabber'
 export default {
   name: 'home',
   components: {
     Banner,
     Personalized,
     JobList,
-    ScrollView
+    ScrollView,
+    ContentTabber
   },
   data () {
     return {
