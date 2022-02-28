@@ -1,6 +1,6 @@
 <template>
 <div class="parttime">
-  兼职
+  全职
 </div>
 </template>
 

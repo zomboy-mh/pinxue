@@ -1,12 +1,17 @@
 <template>
 <div class="fullTime">
-  全职
+  <Select></Select>
 </div>
 </template>
 
 <script>
+  import Select from '../components/Select'
+
 export default {
-  name: 'fullTime'
+  name: 'fullTime',
+  components: {
+    Select
+  },
 }
 </script>
 
