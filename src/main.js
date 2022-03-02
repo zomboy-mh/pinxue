@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import fastclick from 'fastclick'
 import './assets/css/base.scss'
-import { Button, Select } from 'element-ui'
+import { Row, Button, Select , Descriptions,DescriptionsItem, Dropdown, Tag} from 'element-ui'
 import VueLazyload from 'vue-lazyload'
 
 Vue.use(VueLazyload, {
@@ -13,8 +13,13 @@ Vue.use(VueLazyload, {
 // 解决移动端100-300ms延迟问题
 fastclick.attach(document.body)
 Vue.config.productionTip = false
+Vue.use(Row)
 Vue.use(Button)
 Vue.use(Select)
+Vue.use(Descriptions)
+Vue.use(DescriptionsItem)
+Vue.use(Dropdown)
+Vue.use(Tag)
 new Vue({
   router,
   store,

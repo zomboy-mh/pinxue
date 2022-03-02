@@ -6,6 +6,16 @@
           <div class="icon" :class="item.style?'iconStyle':'iconStyle1'"></div>
         </li>
       </ul>
+      <div class="tabbed_detail" v-show="showDetail">
+          <div class="detail_body">
+            <div class="detail_button">圆角按钮</div>
+            <div class="detail_button">圆角按钮</div>
+            <div class="detail_button">圆角按钮</div>
+            <div class="detail_button">圆角按钮</div>
+            <div class="detail_button">圆角按钮</div>
+            <div class="detail_button">圆角按钮</div>
+          </div>
+      </div>
     </div>
 </template>
 
@@ -27,11 +37,17 @@
             name:'筛选',
             style:false
           }],
-          index: 0
+          index: 0,
+          showDetail:false
         }
       },
       methods:{
         changeTaber(item,index){
+          if(item.style === false){
+            this.showDetail = true
+          }else {
+            this.showDetail = false
+          }
           this.taberList.map((itm,idx)=>{
             if(index == idx){
               itm.style = !itm.style
@@ -39,7 +55,6 @@
               itm.style = false
             }
           })
-
 
         }
       }
@@ -90,5 +105,34 @@
       /*}*/
     }
     border-bottom: 1px #000000 solid;
+
+  }
+  .tabbed_detail{
+    position: fixed;
+    top: 182px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.4);
+    .detail_body{
+      width: 96%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background: #f5f5f5;
+      padding: 2%;
+        .detail_button{
+          width: 120px;
+          height: 50px;
+          margin: 10px;
+          border-radius: 5px;
+          text-align: center;
+          line-height: 50px;
+          border: 1px solid #000;
+          @include font_size($font_medium_s);
+          @include font_color();
+        }
+
+    }
   }
 </style>

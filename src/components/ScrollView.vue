@@ -17,7 +17,9 @@ export default {
       scrollY: true,
       disablePointer: true,
       disableTouch: false,
-      disableMouse: true
+      disableMouse: true,
+      click:true,
+      taps:true
     })
     // setTimeout(() => {
     //   console.log(this.iscroll.maxScrollY)
