@@ -1,8 +1,7 @@
 <template>
 <div class="fullTime">
-  <Select></Select>
+  <Select :taberList="taberList" @select-id="getJobList"></Select>
   <JobList :jobList="jobList"></JobList>
-
 </div>
 </template>
 
@@ -18,6 +17,155 @@ export default {
   },
   data(){
     return{
+      taberList: [
+        {
+          name:'兼职类型',
+          type:1,
+          style:false,
+          buttonList:[
+            {
+              id:1,
+              currentStyle:false,
+              name:'北京'
+            },
+            {
+              id:2,
+              currentStyle:false,
+              name:'上海'
+            },
+            {
+              id:3,
+              currentStyle:false,
+              name:'广州'
+            },
+            {
+              id:4,
+              currentStyle:false,
+              name:'杭州'
+            },
+            {
+              id:5,
+              currentStyle:false,
+              name:'西安'
+            },
+            {
+              id:6,
+              currentStyle:false,
+              name:'太原'
+            },
+          ]
+        },
+        {
+          name:'全城',
+          type:2,
+          style:false,
+          buttonList:[
+            {
+              id:1,
+              currentStyle:false,
+              name:'北京'
+            },
+            {
+              id:2,
+              currentStyle:false,
+              name:'上海'
+            },
+            {
+              id:3,
+              currentStyle:false,
+              name:'广州'
+            },
+            {
+              id:4,
+              currentStyle:false,
+              name:'杭州'
+            },
+            {
+              id:5,
+              currentStyle:false,
+              name:'西安'
+            },
+            {
+              id:6,
+              currentStyle:false,
+              name:'太原'
+            },
+          ]
+        },
+        {
+          name:'推荐排序',
+          type:2,
+          style:false,
+          buttonList:[
+            {
+              id:1,
+              currentStyle:false,
+              name:'北京'
+            },
+            {
+              id:2,
+              currentStyle:false,
+              name:'上海'
+            },
+            {
+              id:3,
+              currentStyle:false,
+              name:'广州'
+            },
+            {
+              id:4,
+              currentStyle:false,
+              name:'杭州'
+            },
+            {
+              id:5,
+              currentStyle:false,
+              name:'西安'
+            },
+            {
+              id:6,
+              currentStyle:false,
+              name:'太原'
+            },
+          ]
+        },
+        {
+          name:'筛选',
+          type:3,
+          style:false,
+          buttonList:[
+            {
+              id:1,
+              currentStyle:false,
+              name:'北京'
+            },
+            {
+              id:2,
+              currentStyle:false,
+              name:'上海'
+            },
+            {
+              id:3,
+              currentStyle:false,
+              name:'广州'
+            },
+            {
+              id:4,
+              currentStyle:false,
+              name:'杭州'
+            },
+            {
+              id:5,
+              currentStyle:false,
+              name:'西安'
+            },
+            {
+              id:6,
+              currentStyle:false,
+              name:'太原'
+            },
+          ]
+        }],
       jobList: [
         {
           id: 1,
@@ -77,6 +225,11 @@ export default {
           imgUrl: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Ffd%2Ff1%2Fda%2Ffdf1dacb8ff0b8f13ed29bcbee42f328.jpeg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647588894&t=6fdb5e7049c1c4316f14cfbc08a2d119'
         }
       ]
+    }
+  },
+  methods:{
+    getJobList(data){
+      console.log("选择",data);
     }
   }
 }
