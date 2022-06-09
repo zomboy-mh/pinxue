@@ -11,9 +11,12 @@
   <div class="centre">
       <div class="centreLeft">
         <div class="userCentreName">闪聘进度</div>
+        <img class="userCentreLeftImg" src="../assets/images/userCentreLeft.png" alt="">
+      </div>
+      <div class="centreRight">
+        <div class="userCentreName">闪聘进度</div>
         <img class="userCentreRightImg" src="../assets/images/userCentreRight.png" alt="">
       </div>
-      <div class="centreRight"></div>
   </div>
   <div class="bottom">
 
@@ -70,7 +73,13 @@ export default {
       border: 1px solid #000;
       position: relative;
       overflow: hidden;
-      .userCentreRightImg{
+      .userCentreName{
+        margin-top: 40px;
+        margin-left: 20px;
+        font-weight: bold;
+        @include font_size($font_large);
+      }
+      .userCentreLeftImg{
         position: absolute;
         right: -20px;
         bottom: -30px;
@@ -84,6 +93,22 @@ export default {
       height: 100%;
       border: 1px solid #000;
       border-left-color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      .userCentreName{
+        margin-top: 40px;
+        margin-left: 20px;
+        font-weight: bold;
+        @include font_size($font_large);
+      }
+      .userCentreRightImg{
+        position: absolute;
+        right: -20px;
+        bottom: -30px;
+        width: 160px;
+        height: 160px;
+        transform:rotate(20deg);
+      }
     }
     /*background: blue;*/
 
