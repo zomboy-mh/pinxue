@@ -5,7 +5,7 @@
       </div>
       <p class="header-title">{{title}}</p>
       <div class="header-right">
-        <img src="../assets/images/more.png" alt="">
+<!--        <img src="../assets/images/more.png" alt="">-->
       </div>
     </div>
 </template>
@@ -65,7 +65,7 @@ export default {
       line-height: 100px;
       color: #fff;
       font-weight: bold;
-      @include font_size($font_medium);
+      @include font_size($font_large);
       @include no-wrap()
     }
   }

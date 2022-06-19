@@ -30,6 +30,11 @@ const user = (resolve) => {
     resolve(module)
   })
 }
+const userDetail = (resolve) => {
+  import('../views/user/userDetail').then((module) => {
+    resolve(module)
+  })
+}
 Vue.use(VueRouter)
 
 const routes = [
@@ -46,7 +51,16 @@ const routes = [
   },
   { path: '/fullTime', component: fullTime },
   { path: '/partTime', component: partTime },
-  { path: '/user', component: user }
+  {
+    path: '/user',
+    component: user,
+    children: [
+      {
+        path: 'userDetail/',
+        component: userDetail
+      }
+    ]
+  }
 ]
 
 const router = new VueRouter({
