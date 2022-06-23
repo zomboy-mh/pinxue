@@ -4,8 +4,9 @@ import router from './router'
 import store from './store'
 import fastclick from 'fastclick'
 import './assets/css/base.scss'
-import { Row, Button, Select , Descriptions,DescriptionsItem, Dropdown, Tag} from 'element-ui'
+import { Row, Button, Select , Descriptions,DescriptionsItem, Dropdown, Tag, Option} from 'element-ui'
 import VueLazyload from 'vue-lazyload'
+
 
 Vue.use(VueLazyload, {
   loading: require('./assets/images/loading.png')
@@ -20,6 +21,7 @@ Vue.use(Descriptions)
 Vue.use(DescriptionsItem)
 Vue.use(Dropdown)
 Vue.use(Tag)
+Vue.use(Option)
 new Vue({
   router,
   store,
