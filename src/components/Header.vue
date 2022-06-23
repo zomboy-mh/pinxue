@@ -1,5 +1,5 @@
 <template>
-    <div class="header" @click="changeTheme">
+    <div class="header">
       <div class="header-left">
 <!--        <img src="../assets/images/logo.png" alt="">-->
       </div>

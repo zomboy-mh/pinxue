@@ -10,22 +10,54 @@
         <div class="detailItemTxt">昵称</div>
         <div class="detailItemValue">王强</div>
       </div>
+      <div class="detailItem">
+        <div class="detailItemTxt">性别</div>
+        <div class="detailItemSelect">
+          <el-select id="detailItemSelectSelect" v-model="value" placeholder="请选择">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
 
 <script>
   import SubHeader from '../../components/SubHeader'
+
     export default {
         name: "userDetail",
       components: {
-        SubHeader
+        SubHeader,
       },
       data: function () {
         return {
           jobList: [{
             name: '个人信息'
-          }]
+          }],
+          options: [{
+            value: '选项1',
+            label: '黄金糕'
+          }, {
+            value: '选项2',
+            label: '双皮奶'
+          }, {
+            value: '选项3',
+            label: '蚵仔煎'
+          }, {
+            value: '选项4',
+            label: '龙须面'
+          }, {
+            value: '选项5',
+            label: '北京烤鸭'
+          }],
+          value: ''
         }
       },
   methods: {
@@ -77,6 +109,16 @@
         align-items: center;
         line-height: 80px;
         @include font_size($font_large);
+        .detailItemSelect{
+          /*width: 100px;*/
+          /*height: 100px;*/
+          #detailItemSelectSelect{
+            height: 200px;
+            width: 150px;
+            font-size: 30px;
+            line-height: 200px;
+          }
+        }
       }
     }
   }
