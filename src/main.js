@@ -4,7 +4,8 @@ import router from './router'
 import store from './store'
 import fastclick from 'fastclick'
 import './assets/css/base.scss'
-import { Row, Button, Select , Descriptions,DescriptionsItem, Dropdown, Tag, Option} from 'element-ui'
+import { Row, Button, Select , Descriptions,DescriptionsItem, Dropdown, Tag, Option,
+DatePicker, Input,Tabs,TabPane} from 'element-ui'
 import VueLazyload from 'vue-lazyload'
 
 
@@ -22,6 +23,10 @@ Vue.use(DescriptionsItem)
 Vue.use(Dropdown)
 Vue.use(Tag)
 Vue.use(Option)
+Vue.use(DatePicker)
+Vue.use(Input)
+Vue.use(Tabs)
+Vue.use(TabPane)
 new Vue({
   router,
   store,

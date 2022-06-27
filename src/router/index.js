@@ -21,7 +21,12 @@ const fullTime = (resolve) => {
   })
 }
 const partTime = (resolve) => {
-  import('../views/partTime').then((module) => {
+  import('../views/partTime/partTime').then((module) => {
+    resolve(module)
+  })
+}
+const partTimeProcess = (resolve) => {
+  import('../views/partTime/partTimeProcess').then((module) => {
     resolve(module)
   })
 }
@@ -50,7 +55,12 @@ const routes = [
     ]
   },
   { path: '/fullTime', component: fullTime },
-  { path: '/partTime', component: partTime },
+  { path: '/partTime',
+    component: partTime,
+    children: [
+
+  ]
+  },
   {
     path: '/user',
     component: user,
@@ -58,6 +68,10 @@ const routes = [
       {
         path: 'userDetail/',
         component: userDetail
+      },
+      {
+        path: 'partTimeProcess/',
+        component:partTimeProcess
       }
     ]
   }
