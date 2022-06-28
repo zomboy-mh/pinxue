@@ -10,6 +10,11 @@ const home = (resolve) => {
     resolve(module)
   })
 }
+const logon = (resolve) => {
+  import('../views/logon').then((module) => {
+    resolve(module)
+  })
+}
 const Detail = (resolve) => {
   import('../views/Detail').then((module) => {
     resolve(module)
@@ -54,6 +59,7 @@ const routes = [
       }
     ]
   },
+  { path: '/logon',component: logon,},
   { path: '/fullTime', component: fullTime },
   { path: '/partTime',
     component: partTime,
