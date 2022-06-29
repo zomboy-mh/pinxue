@@ -10,8 +10,8 @@ const home = (resolve) => {
     resolve(module)
   })
 }
-const logon = (resolve) => {
-  import('../views/logon').then((module) => {
+const login = (resolve) => {
+  import('../views/login').then((module) => {
     resolve(module)
   })
 }
@@ -59,7 +59,7 @@ const routes = [
       }
     ]
   },
-  { path: '/logon',component: logon,},
+  { path: '/login',component: login,},
   { path: '/fullTime', component: fullTime },
   { path: '/partTime',
     component: partTime,
@@ -83,10 +83,26 @@ const routes = [
   }
 ]
 
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  // 如果访问登录放行
+  if (to.path === '/login'){
+    return next()
+  }
+  //获取当前登录状态
+  // console.log("token", sessionStorage.getItem("token"))
+  const token = sessionStorage.getItem('token');
+  // console.log(!token)
+  //3.如果方位的是其他路由 判断是否已经登录
+  //如果已经登陆 放行，没登陆 强制跳转登录
+  if (!token){
+    return next('/login')
+  }
+  return next()
+})
 export default router
