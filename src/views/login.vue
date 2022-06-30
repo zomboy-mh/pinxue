@@ -17,15 +17,19 @@
                   </el-input>
                 </el-col>
                 <el-col :span="8">
-                 <div class=""></div>
+                 <div class="codeBox">
+                   获取验证码
+                 </div>
                 </el-col>
               </el-row>
-
             </el-form-item>
           </el-form>
-<!--          <i class="el-icon-close phoneRight"></i>-->
         </div>
-
+      </div>
+      <div class="loginBottom">
+        <div class="loginBtn">登录</div>
+        <div class="accountsLogin">帐号密码登录</div>
+        <div class="loginTxt">点击登录即代表同意用户协议和隐私政策</div>
       </div>
     </div>
 </template>
@@ -123,7 +127,7 @@
       width: 100%;
       height: 480px;
       /*background: red;*/
-      position: absolute;
+      position: relative;
       left: 0;
       top: 150px;
       h1{
@@ -141,6 +145,7 @@
         position: relative;
         text-align: center;
         margin-top: 50px;
+        padding: 0 50px 0 50px;
         .phoneLeft{
           position: absolute;
           left: 80px;
@@ -179,8 +184,51 @@
           font-size: 30px;
           /*margin-left: 30px;*/
         }
+        .codeBox{
+          margin-top: 20px;
+          height: 80px;
+          width: 100%;
+          line-height: 80px;
+          background: #cccccc;
+          border-radius: 40px;
+          font-size: 30px;
+          box-sizing: border-box;
+        }
       }
-
+    }
+    .loginBottom{
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      width: 100%;
+      /*padding: 0 50px 0 50px;*/
+      .loginTxt{
+        width: 80%;
+        margin-left: 10%;
+        font-size: 25px;
+        color: #6d6c6c;
+        margin-top: 30px;
+        text-align: center;
+      }
+      .accountsLogin{
+        width: 50%;
+        margin-left: 25%;
+        font-size: 40px;
+        color: #cccccc;
+        text-align: center;
+        margin-top: 15px;
+      }
+      .loginBtn{
+        width: 80%;
+        margin-left: 10%;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 40px;
+        background: #FFFFFF;
+        color: #3f2095;
+        font-size: 40px;
+        text-align: center;
+      }
     }
   }
 </style>
