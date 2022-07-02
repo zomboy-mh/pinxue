@@ -130,7 +130,7 @@
   export default {
     name: 'Detail',
     components: {
-      SubHeader
+        SubHeader
     },
     data: function () {
       return {
