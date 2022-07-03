@@ -10,6 +10,11 @@ const home = (resolve) => {
     resolve(module)
   })
 }
+const login = (resolve) => {
+  import('../views/login').then((module) => {
+    resolve(module)
+  })
+}
 const Detail = (resolve) => {
   import('../views/Detail').then((module) => {
     resolve(module)
@@ -21,7 +26,12 @@ const fullTime = (resolve) => {
   })
 }
 const partTime = (resolve) => {
-  import('../views/partTime').then((module) => {
+  import('../views/partTime/partTime').then((module) => {
+    resolve(module)
+  })
+}
+const partTimeProcess = (resolve) => {
+  import('../views/partTime/partTimeProcess').then((module) => {
     resolve(module)
   })
 }
@@ -49,8 +59,14 @@ const routes = [
       }
     ]
   },
+  { path: '/login',component: login,},
   { path: '/fullTime', component: fullTime },
-  { path: '/partTime', component: partTime },
+  { path: '/partTime',
+    component: partTime,
+    children: [
+
+  ]
+  },
   {
     path: '/user',
     component: user,
@@ -58,15 +74,35 @@ const routes = [
       {
         path: 'userDetail/',
         component: userDetail
+      },
+      {
+        path: 'partTimeProcess/',
+        component:partTimeProcess
       }
     ]
   }
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  // 如果访问登录放行
+  if (to.path === '/login'){
+    return next()
+  }
+  //获取当前登录状态
+  // console.log("token", sessionStorage.getItem("token"))
+  const token = sessionStorage.getItem('token');
+  // console.log(!token)
+  //3.如果方位的是其他路由 判断是否已经登录
+  //如果已经登陆 放行，没登陆 强制跳转登录
+  if (!token){
+    return next('/login')
+  }
+  return next()
+})
 export default router

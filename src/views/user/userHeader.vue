@@ -1,10 +1,11 @@
 <template>
-    <div class="header">
+    <div class="header" >
       <div class="header-left" @click.stop="back">
-        <img src="../assets/images/banck.png" alt="">
+        <img src="../../assets/images/banck.png" alt="">
       </div>
       <p class="header-title">{{title}}</p>
       <div class="header-right">
+        保存
 <!--        <img src="../assets/images/more.png" alt="">-->
       </div>
     </div>
@@ -12,7 +13,7 @@
 
 <script>
 export default {
-  name: 'SubHeader',
+  name: 'userHeader',
   data () {
     return {
       themes: ['theme', 'theme1', 'theme2'],
@@ -42,23 +43,32 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/css/variable";
-  @import "../assets/css/mixin";
+  @import "../../assets/css/variable";
+  @import "../../assets/css/mixin";
   .header{
     width: 100%;
     height: 100px;
     @include bg_color();
     display: flex;
     justify-content: space-between;
-    .header-left,.header-right{
+    align-items: center;
+    .header-left{
       width: 70px;
       height: 70px;
-      /*background: #000;*/
-      margin-top: 18px;
+      line-height: 60px;
       img{
         width: 55px;
         height: 55px;
       }
+    }
+    .header-right{
+      width: 70px;
+      height: 70px;
+      @include font_size($font_large);
+      /*background: #000;*/
+      color: #FFFFFF;
+      line-height: 70px;
+      margin-right: 20px;
     }
     .header-title{
       text-align: center;

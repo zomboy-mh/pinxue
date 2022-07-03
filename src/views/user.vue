@@ -13,7 +13,7 @@
 
   </div>
   <div class="centre">
-      <div class="centreLeft">
+      <div class="centreLeft" @click="partTimeProcessPath()">
         <div class="userCentreName">闪聘进度</div>
         <img class="userCentreNext" src="../assets/images/userCentreNext.png" alt="">
         <img class="userCentreLeftImg" src="../assets/images/userCentreLeft.png" alt="">
@@ -81,6 +81,9 @@ export default {
     },
     userDetailPath () {
       this.$router.push('/user/userDetail/')
+    },
+    partTimeProcessPath () {
+      this.$router.push('/user/partTimeProcess/')
     }
 
   }
