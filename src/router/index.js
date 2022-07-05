@@ -36,12 +36,17 @@ const partTimeProcess = (resolve) => {
   })
 }
 const user = (resolve) => {
-  import('../views/user').then((module) => {
+  import('../views/user/user').then((module) => {
     resolve(module)
   })
 }
 const userDetail = (resolve) => {
   import('../views/user/userDetail').then((module) => {
+    resolve(module)
+  })
+}
+const userPay = (resolve) => {
+  import('../views/user/userPay').then((module) => {
     resolve(module)
   })
 }
@@ -78,6 +83,10 @@ const routes = [
       {
         path: 'partTimeProcess/',
         component:partTimeProcess
+      },
+      {
+        path: 'userPay/',
+        component:userPay
       }
     ]
   }

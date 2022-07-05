@@ -2,7 +2,7 @@
 <div class="user">
   <div class="header">
     <div class="headerBox">
-      <img class="userHeaderBg" src="../assets/images/userHeaderBg.png" alt="">
+      <img class="userHeaderBg" src="../../assets/images/userHeaderBg.png" alt="">
       <div class="headerImg">
 
       </div>
@@ -15,52 +15,25 @@
   <div class="centre">
       <div class="centreLeft" @click="partTimeProcessPath()">
         <div class="userCentreName">闪聘进度</div>
-        <img class="userCentreNext" src="../assets/images/userCentreNext.png" alt="">
-        <img class="userCentreLeftImg" src="../assets/images/userCentreLeft.png" alt="">
+        <img class="userCentreNext" src="../../assets/images/userCentreNext.png" alt="">
+        <img class="userCentreLeftImg" src="../../assets/images/userCentreLeft.png" alt="">
       </div>
-      <div class="centreRight">
-        <div class="userCentreName">我的简历</div>
-        <img class="userCentreNext" src="../assets/images/userCentreNext.png" alt="">
-        <img class="userCentreRightImg" src="../assets/images/userCentreRight.png" alt="">
+      <div class="centreRight" @click="userPayPath()">
+        <div class="userCentreName">我的钱包</div>
+        <img class="userCentreNext" src="../../assets/images/userCentreNext.png" alt="">
+        <img class="userCentreRightImg" src="../../assets/images/userCentreRight.png" alt="">
       </div>
   </div>
   <div class="bottom">
-      <div class="tabsList">
-        <div class="tabItem" @click="userDetailPath()">
+      <div class="tabsList" v-for="(item,index) in tabsList" :key="index">
+        <div class="tabItem" @click="userDetailPath(index)">
           <div class="tabItemName">
-            <img class="tabItemNameIcon" src="../assets/images/tabItemUserIcon.png" alt="">
-            <div class="tabItemNameTxt">个人资料</div>
+            <img class="tabItemNameIcon" :src="item.tabItemNameIcon" alt="">
+            <div class="tabItemNameTxt">{{item.tabItemNameTxt}}</div>
           </div>
-          <img class="tabItemNext" src="../assets/images/next.png" alt="">
+          <img class="tabItemNext" src="../../assets/images/next.png" alt="">
         </div>
       </div>
-    <div class="tabsList">
-      <div class="tabItem">
-        <div class="tabItemName">
-          <img class="tabItemNameIcon" src="../assets/images/tabItemRecordIcon.png" alt="">
-          <div class="tabItemNameTxt">活动记录</div>
-        </div>
-        <img class="tabItemNext" src="../assets/images/next.png" alt="">
-      </div>
-    </div>
-    <div class="tabsList">
-      <div class="tabItem">
-        <div class="tabItemName">
-          <img class="tabItemNameIcon" src="../assets/images/customerService.png" alt="">
-          <div class="tabItemNameTxt">联系客服</div>
-        </div>
-        <img class="tabItemNext" src="../assets/images/next.png" alt="">
-      </div>
-    </div>
-    <div class="tabsList">
-      <div class="tabItem">
-        <div class="tabItemName">
-          <img class="tabItemNameIcon" src="../assets/images/setup.png" alt="">
-          <div class="tabItemNameTxt">设置</div>
-        </div>
-        <img class="tabItemNext" src="../assets/images/next.png" alt="">
-      </div>
-    </div>
   </div>
   <div class="bottoms"></div>
   <router-view></router-view>
@@ -72,15 +45,40 @@ export default {
   name: 'user',
   data: function () {
     return {
-
+           tabsList:[
+             {
+               tabItemNameIcon:require('../../assets/images/tabItemUserIcon.png'),
+               tabItemNameTxt:'个人资料'
+             },
+             {
+               tabItemNameIcon:require('../../assets/images/tabItemRecordIcon.png'),
+               tabItemNameTxt:'我的简历'
+             },
+             {
+               tabItemNameIcon:require('../../assets/images/customerService.png'),
+               tabItemNameTxt:'联系客服'
+             },
+             {
+               tabItemNameIcon:require('../../assets/images/setup.png'),
+               tabItemNameTxt:'设置'
+             },
+           ]
     }
   },
   methods: {
     getBanner () {
       console.log('数组', this.banners)
     },
-    userDetailPath () {
-      this.$router.push('/user/userDetail/')
+    userPayPath(){
+      this.$router.push('/user/userPay/')
+    },
+    userDetailPath(index) {
+      if (index == 0) {
+        this.$router.push('/user/userDetail/')
+      } else if(index == 1)
+      {
+
+      }
     },
     partTimeProcessPath () {
       this.$router.push('/user/partTimeProcess/')
@@ -91,8 +89,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/css/variable";
-  @import "../assets/css/mixin";
+  @import "../../assets/css/variable";
+  @import "../../assets/css/mixin";
   .user{
     margin: 0;
     padding: 0;
@@ -129,9 +127,9 @@ export default {
           width: 120px;
           height: 120px;
           border-radius: 60px;
-          background: url("../assets/images/04.jpg") no-repeat;
+          background: url("../../assets/images/04.jpg") no-repeat;
           background-size: 100% 100%;
-          z-index: 10;
+          z-index: 1;
           border: 2px solid #FFFFFF;
         }
         .headerName{
@@ -139,7 +137,7 @@ export default {
           margin-left: 30px;
           height: 60px;
           line-height: 60px;
-          z-index: 10;
+          z-index: 1;
           color: #666666;
           @include font_size($font_large);
         }
