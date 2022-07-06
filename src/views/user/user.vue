@@ -96,21 +96,10 @@ export default {
     padding: 0;
     background: #f4f4f4;
     box-sizing: border-box;
-    /*border-top: 1px solid #2cb4fc;*/
     .header{
       height:310px;
-      /*padding: 50px 20px 0px 20px;*/
-      /*margin-top: 50px;*/
-      /*background: url("../assets/images/userHeaderBg.png") no-repeat;*/
-      /*background:#2cb4fc;*/
-      /*background:linear-gradient(180deg, #ffff, #2cb3fb);*/
-      /*background-size: 100% 100%;*/
-      /*box-sizing: border-box;*/
       .headerBox{
-        /*background:linear-gradient(180deg, #2cb4fc, #ffffff);*/
         border-radius: 5px;
-        /*background: url("../assets/images/userHeaderBg.png") no-repeat;*/
-        /*background-size: 100% 100%;*/
         height: 100%;
         display: flex;
         position: relative;

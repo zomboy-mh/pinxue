@@ -37,40 +37,33 @@
 </script>
 
 <style scoped lang="scss">
+  @import "../../assets/css/main";
   @import "../../assets/css/variable";
   @import "../../assets/css/mixin";
-  .detail {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background: #f3f3f3;
-    ::v-deep .el-tabs__nav-scroll{
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-    ::v-deep .el-tabs__nav{
-      /*padding-left: 20px;*/
-      padding-right: 20px;
-    }
-    ::v-deep .el-tabs__item{
-      height: 80px;
-      @include font_size($font_large);
-      line-height: 80px;
-    }
-    ::v-deep .el-tabs__nav-prev{
-      font-size: 40px;
-      line-height: 40px;
-      height: 40px;
-      margin-top: 20px;
-    }
-    ::v-deep .el-tabs__nav-next{
-      font-size: 40px;
-      line-height: 40px;
-      height: 40px;
-      margin-top: 20px;
-    }
+
+  ::v-deep .el-tabs__nav-scroll{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  ::v-deep .el-tabs__nav{
+    /*padding-left: 20px;*/
+    padding-right: 20px;
+  }
+  ::v-deep .el-tabs__item{
+    height: 80px;
+    @include font_size($font_large);
+    line-height: 80px;
+  }
+  ::v-deep .el-tabs__nav-prev{
+    font-size: 40px;
+    line-height: 40px;
+    height: 40px;
+    margin-top: 20px;
+  }
+  ::v-deep .el-tabs__nav-next{
+    font-size: 40px;
+    line-height: 40px;
+    height: 40px;
+    margin-top: 20px;
   }
 </style>
