@@ -19,6 +19,7 @@ export default {
 </script>
 <style scoped lang="scss">
   @import "assets/css/variable";
+  @import "assets/css/main";
   .theme{
     position: fixed;
     left: 0;

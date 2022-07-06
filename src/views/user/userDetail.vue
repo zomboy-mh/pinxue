@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <userHeader :title="jobList[0].name"></userHeader>
+    <userHeader :title="headerName"></userHeader>
     <div class="detailBox">
         <div class="headPortrait">
           <div>个人头像</div>
@@ -92,9 +92,7 @@
       },
       data: function () {
         return {
-          jobList: [{
-            name: '个人信息'
-          }],
+          headerName: '个人信息',
           options: [{
             value: '选项1',
             label: '男'
@@ -134,7 +132,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 666;
     background: #f3f3f3;
     .detailBox{
       width: 96%;

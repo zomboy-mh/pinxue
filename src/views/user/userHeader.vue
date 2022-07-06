@@ -4,9 +4,12 @@
         <img src="../../assets/images/banck.png" alt="">
       </div>
       <p class="header-title">{{title}}</p>
-      <div class="header-right">
+      <div class="header-right" v-if="title=='个人信息'">
         保存
 <!--        <img src="../assets/images/more.png" alt="">-->
+      </div>
+      <div class="header-right" v-else>
+
       </div>
     </div>
 </template>
