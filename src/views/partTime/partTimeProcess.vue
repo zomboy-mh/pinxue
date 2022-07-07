@@ -40,7 +40,7 @@
   @import "../../assets/css/main";
   @import "../../assets/css/variable";
   @import "../../assets/css/mixin";
-
+.detail{
   ::v-deep .el-tabs__nav-scroll{
     margin-left: 20px;
     margin-right: 20px;
@@ -66,4 +66,6 @@
     height: 40px;
     margin-top: 20px;
   }
+}
+
 </style>

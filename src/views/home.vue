@@ -34,19 +34,19 @@
         banners: [{
           id: 1,
           path: 'https://www.baidu.com/',
-          imgUrl: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-10-12%2F5f83b7c13d0b9.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647582423&t=94ac1aaabad886a28a94a84ead27bd1f'
+          imgUrl: 'https://image.meiye.art/pic_cA5mV4rNxbPSXaQffgFje'
         }, {
           id: 2,
           path: 'https://www.jd.com/',
-          imgUrl: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F911%2F111G5133543%2F15111G33543-1.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647582449&t=4ca6fb19efae249739c34d28009a7dab'
+          imgUrl: 'https://image.meiye.art/pic_yhY9ngQy35nofQeY2gn0-'
         }, {
           id: 3,
           path: 'https://www.taobao.com/',
-          imgUrl: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F911%2F050916125K7%2F160509125K7-11.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647582475&t=32c3ab9c186e11b9c5e3f05604153d6e'
+          imgUrl: 'https://image.meiye.art/pic_kSj7jgdAsyoWgiQSyfO7i'
         }, {
           id: 4,
           path: 'https://blog.csdn.net/',
-          imgUrl: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F579ef51984b03.jpg%3Fdown&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647582492&t=0a6d300c86904d5c9dd7d96e57516883'
+          imgUrl: 'https://image.meiye.art/pic_CiH2hJX6ztrRkD6E00JTX'
         }
         ],
         Personalized: [

@@ -1,17 +1,17 @@
 <template>
   <div class="detail">
-    <userHeader :title="headerName"></userHeader>
+    <detailHeader :title="headerName"></detailHeader>
   </div>
 </template>
 
 <script>
   // 这里可以导入其他文件（比如：组件，工具 js，第三方插件 js，json 文件，图片文件等等）
-  import userHeader from 'user/userHeader'
+  import detailHeader from './detailHeader'
 
   export default {
     // import 引入的组件需要注入到对象中才能使用
     components: {
-      userHeader
+      detailHeader
     },
     props: {},
     name: "Business",
@@ -51,8 +51,8 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/css/main";
-  @import "../assets/css/variable";
-  @import "../assets/css/mixin";
+  @import "../../assets/css/main";
+  @import "../../assets/css/variable";
+  @import "../../assets/css/mixin";
 
 </style>

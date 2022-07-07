@@ -16,7 +16,12 @@ const login = (resolve) => {
   })
 }
 const Detail = (resolve) => {
-  import('../views/Detail').then((module) => {
+  import('../views/detail/Detail').then((module) => {
+    resolve(module)
+  })
+}
+const business = (resolve) => {
+  import('../views/detail/business').then((module) => {
     resolve(module)
   })
 }
@@ -61,6 +66,10 @@ const routes = [
       {
         path: 'detail/:id',
         component: Detail
+      },
+      {
+        path: 'business/:id',
+        component: business
       }
     ]
   },
