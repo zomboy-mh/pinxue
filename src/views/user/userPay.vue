@@ -1,13 +1,89 @@
 <template>
   <div class="detail">
     <userHeader :title="headerName"></userHeader>
-
+    <div class="card">
+      <img class="cardImg" src="../../assets/images/userPayCardBg.png" alt="">
+      <div class="payNumb">
+          <div class="payText">余额</div>
+          <div class="payValue">1000RMB</div>
+      </div>
+      <div class="cardBtn">
+        <div class="cardBtnLeft">充值</div>
+        <div class="cardBtnRight">提现</div>
+      </div>
+    </div>
+    <div class="payHistory">
+        <div class="payHistoryName">账户变动明细</div>
+        <div class="payHistoryItemBox">
+          <div class="payHistoryItem1">
+            <div class="payHistoryItemLeft">
+              <img class="itemImg" src="../../assets/images/payInLogo.png" alt="">
+              <div class="ItemLeft">
+                <div class="ItemLeftTxt">收入</div>
+                <div class="ItemLeftTime">2022-11-30 11:20:60</div>
+              </div>
+            </div>
+            <div class="payHistoryItemRight">
+              +100元
+            </div>
+          </div>
+          <div class="payHistoryItem">
+            <div class="payHistoryItemLeft">
+              <img class="itemImg" src="../../assets/images/payOutLogo.png" alt="">
+              <div class="ItemLeft">
+                <div class="ItemLeftTxt">提现</div>
+                <div class="ItemLeftTime">2022-11-30 11:20:60</div>
+              </div>
+            </div>
+            <div class="payHistoryItemRight">
+              -100元
+            </div>
+          </div>
+          <div class="payHistoryItem">
+            <div class="payHistoryItemLeft">
+              <img class="itemImg" src="../../assets/images/payOutLogo.png" alt="">
+              <div class="ItemLeft">
+                <div class="ItemLeftTxt">提现</div>
+                <div class="ItemLeftTime">2022-11-30 11:20:60</div>
+              </div>
+            </div>
+            <div class="payHistoryItemRight">
+              -100元
+            </div>
+          </div>
+          <div class="payHistoryItem">
+            <div class="payHistoryItemLeft">
+              <img class="itemImg" src="../../assets/images/payOutLogo.png" alt="">
+              <div class="ItemLeft">
+                <div class="ItemLeftTxt">提现</div>
+                <div class="ItemLeftTime">2022-11-30 11:20:60</div>
+              </div>
+            </div>
+            <div class="payHistoryItemRight">
+              -100元
+            </div>
+          </div>
+          <div class="payHistoryItem1">
+            <div class="payHistoryItemLeft">
+              <img class="itemImg" src="../../assets/images/payInLogo.png" alt="">
+              <div class="ItemLeft">
+                <div class="ItemLeftTxt">收入</div>
+                <div class="ItemLeftTime">2022-11-30 11:20:60</div>
+              </div>
+            </div>
+            <div class="payHistoryItemRight">
+              +100元
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
 </template>
 
 <script>
   // 这里可以导入其他文件（比如：组件，工具 js，第三方插件 js，json 文件，图片文件等等）
   import userHeader from './userHeader'
+
   export default {
     // import 引入的组件需要注入到对象中才能使用
     components: {
@@ -52,4 +128,112 @@
 
 <style scoped lang="scss">
   @import "../../assets/css/main";
+  @import "../../assets/css/variable";
+  @import "../../assets/css/mixin";
+  .card{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 50px;
+    position: relative;
+    .payNumb{
+      width: 50%;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      height: 200px;
+      .payText{
+        font-size: 40px;
+      }
+      .payValue{
+        font-size: 50px;
+        margin-top: 50px;
+      }
+    }
+    .cardImg{
+      width: 100%;
+    }
+    .cardBtn{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      .cardBtnLeft{
+        width: 50%;
+        height: 100px;
+        background: #22d3dd;
+        text-align: center;
+        line-height: 100px;
+        color: #ffffff;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        @include font_size($font_large);
+      }
+      .cardBtnRight{
+        width: 50%;
+        height: 100px;
+        background: #fb9e59;
+        text-align: center;
+        line-height: 100px;
+        color: #ffffff;
+        @include font_size($font_large);
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+  }
+  .payHistory{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+    .payHistoryName{
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      color: #616060;
+    }
+    .payHistoryItemBox{
+      width: 100%;
+      height: 1050px;
+      overflow: auto;
+      .payHistoryItem1,.payHistoryItem{
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        /*background: linear-gradient(90deg, #928d8d, #f4f4f4);*/
+        background: linear-gradient(90deg, #fb9e59, #f4f4f4);
+        align-items: center;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        margin-bottom: 10px;
+        .payHistoryItemLeft{
+          display: flex;
+          color: #000000;
+          .itemImg{
+            width: 80px;
+            height: 80px;
+            margin-left: 10px;
+          }
+          .ItemLeft{
+            margin-left: 10px;
+            .ItemLeftTxt{
+              @include font_size($font_medium);
+            }
+            .ItemLeftTime{
+              margin-top: 10px;
+              @include font_size($font_medium);
+            }
+          }
+        }
+        .payHistoryItemRight{
+          @include font_size($font_large);
+          color: #000000;
+        }
+      }
+      .payHistoryItem1{
+        background: linear-gradient(90deg,#f4f4f4 ,#22d3dd);
+      }
+    }
+
+  }
 </style>

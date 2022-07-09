@@ -16,7 +16,12 @@ const login = (resolve) => {
   })
 }
 const Detail = (resolve) => {
-  import('../views/Detail').then((module) => {
+  import('../views/detail/Detail').then((module) => {
+    resolve(module)
+  })
+}
+const business = (resolve) => {
+  import('../views/detail/business').then((module) => {
     resolve(module)
   })
 }
@@ -61,6 +66,10 @@ const routes = [
       {
         path: 'detail/:id',
         component: Detail
+      },
+      {
+        path: 'business/:id',
+        component: business
       }
     ]
   },
@@ -105,7 +114,7 @@ router.beforeEach((to, from, next) => {
   }
   //获取当前登录状态
   // console.log("token", sessionStorage.getItem("token"))
-  const token = sessionStorage.getItem('token');
+  const token = localStorage.getItem('token');
   // console.log(!token)
   //3.如果方位的是其他路由 判断是否已经登录
   //如果已经登陆 放行，没登陆 强制跳转登录

@@ -10,18 +10,18 @@
         </div>
         <div class="publish">
           <div class="publishPlace">
-            <img class="placeIcon" src="../assets/images/didian.png" alt="">
+            <img class="placeIcon" src="../../assets/images/didian.png" alt="">
             <p>太原</p>
           </div>
           <div class="publishTime">
-            <img class="placeTimeIcon" src="../assets/images/placeTimeIcon.png" alt="">
+            <img class="placeTimeIcon" src="../../assets/images/placeTimeIcon.png" alt="">
             <p>17小时前</p>
           </div>
         </div>
         <div class="jobInvite">
           <div class="jobInviteLeft">邀请好友做兼职</div>
           <div class="jobInviteRight">
-            <img src="../assets/images/yaoqing.png" alt="">
+            <img src="../../assets/images/yaoqing.png" alt="">
             <div>邀请</div>
           </div>
         </div>
@@ -58,13 +58,13 @@
           </div>
           <div class="jobPlace">
             <div class="jobPlaceName">工作地址：浦沿街道-观邸国际</div>
-            <img class="jobPlaceIcon" src="../assets/images/jobPlaceIcon.png" alt="">
+            <img class="jobPlaceIcon" src="../../assets/images/jobPlaceIcon.png" alt="">
           </div>
         </div>
       </div>
       <div class="center">
         <div class="jobDetailTitle">
-          <img class="jobDetailImg" src="../assets/images/jobDetail.png" alt="">
+          <img class="jobDetailImg" src="../../assets/images/jobDetail.png" alt="">
           <div class="">职位详情</div>
         </div>
         <div class="jobDetailBody">
@@ -78,22 +78,22 @@
           <div class="jobDetailType">工作地点：山西太原杏花岭</div>
         </div>
       </div>
-      <div class="center">
+      <div class="center" @click="fatherSelectItem(1)">
         <div class="businessTitle">
           <div class="businessTitleLift">
-            <img class="businessImg" src="../assets/images/businessIcon.png" alt="">
+            <img class="businessImg" src="../../assets/images/businessIcon.png" alt="">
             <div class="">商家信息</div>
           </div>
           <div class="businessTitleRight">
-            <img class="businessStarImg" src="../assets/images/businessStar.png" alt="">
-            <img class="businessStarImg" src="../assets/images/businessStar.png" alt="">
-            <img class="businessStarImg" src="../assets/images/businessStar.png" alt="">
-            <img class="businessStarImg" src="../assets/images/businessStar.png" alt="">
+            <img class="businessStarImg" src="../../assets/images/businessStar.png" alt="">
+            <img class="businessStarImg" src="../../assets/images/businessStar.png" alt="">
+            <img class="businessStarImg" src="../../assets/images/businessStar.png" alt="">
+            <img class="businessStarImg" src="../../assets/images/businessStar.png" alt="">
 
           </div>
         </div>
         <div class="businessDetail">
-          <img class="businessLogo" src="../assets/images/schoolIcon.png" alt="">
+          <img class="businessLogo" src="../../assets/images/schoolIcon.png" alt="">
           <div class="businessName">太原万柏林区太原理工大学</div>
         </div>
 
@@ -104,14 +104,14 @@
       <div class="center">
         <div class="businessTitle">
           <div class="businessTitleLift">
-            <img class="businessImg" src="../assets/images/compAssess.png" alt="">
+            <img class="businessImg" src="../../assets/images/compAssess.png" alt="">
             <div class="">综合评价</div>
           </div>
           <div class="businessTitleRight">
-            <img class="businessStarImg" src="../assets/images/businessStar.png" alt="">
-            <img class="businessStarImg" src="../assets/images/businessStar.png" alt="">
-            <img class="businessStarImg" src="../assets/images/businessStar.png" alt="">
-            <img class="businessStarImg" src="../assets/images/businessStar.png" alt="">
+            <img class="businessStarImg" src="../../assets/images/businessStar.png" alt="">
+            <img class="businessStarImg" src="../../assets/images/businessStar.png" alt="">
+            <img class="businessStarImg" src="../../assets/images/businessStar.png" alt="">
+            <img class="businessStarImg" src="../../assets/images/businessStar.png" alt="">
 
           </div>
         </div>
@@ -124,7 +124,7 @@
 </template>
 
 <script>
-  import SubHeader from '../components/SubHeader'
+  import SubHeader from '../../components/SubHeader'
   // import { getJobList } from '../api/index'
 
   export default {
@@ -147,13 +147,18 @@
       //   .catch((err) => {
       //     console.log(err)
       //   })
+    },
+    methods:{
+      fatherSelectItem(id) {
+        this.$router.push('/home/business/' + id)
+      }
     }
   }
 </script>
 
 <style scoped lang="scss">
-  @import "../assets/css/variable";
-  @import "../assets/css/mixin";
+  @import "../../assets/css/variable";
+  @import "../../assets/css/mixin";
   .detail {
     position: fixed;
     top: 0;
