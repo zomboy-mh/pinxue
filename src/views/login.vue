@@ -128,17 +128,6 @@
         if(this.register){
           this.getRegister()
         }
-        // let userName = this.dynamicValidateForm.phone;
-        // let password = this.dynamicValidateForm.password;
-        // if (userName === 'admin' && password === '123456') {
-        //   localStorage.setItem('token', '123');
-        //   this.$router.push({
-        //     path: '/home'
-        //   })
-        // } else {
-        //   return
-        // }
-
       },
       getRegister(){
         getRegister({
@@ -148,7 +137,8 @@
         }).then((res)=>{
           console.log("注册",res)
         })
-      }
+      },
+
     }
   }
 </script>
