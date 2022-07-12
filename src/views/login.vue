@@ -59,13 +59,13 @@
       <div class="loginBtn" @click="submitLogin">确定</div>
       <div @click="ifCode = false,register = false" v-show="ifCode" class="accountsLogin">帐号密码登录</div>
       <div @click="ifCode = true,register = false" v-show="!ifCode" class="accountsLogin">手机验证码登录</div>
-      <div class="loginTxt">点击确定即代表同意用户协议和隐私政策</div>
+      <div class="loginTxt" @click="getDelete">点击确定即代表同意用户协议和隐私政策</div>
     </div>
   </div>
 </template>
 
 <script>
-  import {getRegister} from '../api/index'
+  import {getRegister,getDelete} from '../api/index'
   export default {
     name: "login",
     data: function () {
@@ -135,10 +135,15 @@
           code:123456,
           password:this.dynamicValidateForm.checkPass,
         }).then((res)=>{
+
           console.log("注册",res)
         })
       },
-
+      getDelete(){
+        getDelete().then((res)=>{
+          console.log("123",res)
+        })
+      },
     }
   }
 </script>
