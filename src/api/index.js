@@ -1,5 +1,8 @@
 // 管理接口地址
 import NetWork from './network'
+
+//注册
+export const getRegister = (data) => NetWork.post('/user/register',data)
 //广告信息
 export const getBanner = () => NetWork.get('')
 // 获取职位详情
