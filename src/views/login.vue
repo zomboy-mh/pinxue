@@ -65,7 +65,7 @@
 </template>
 
 <script>
-  import {getRegister,getDelete} from '../api/index'
+  import {getRegister,getDelete,getPsLogin} from '../api/index'
   export default {
     name: "login",
     data: function () {
@@ -103,7 +103,8 @@
           phone: '',
           code: '',
           pass: '',
-          checkPass: ''
+          checkPass: '',
+          password:''
         },
         rules: {
           email: [
@@ -127,6 +128,8 @@
       submitLogin() {
         if(this.register){
           this.getRegister()
+        }else {
+          this.getPsLogin()
         }
       },
       getRegister(){
@@ -135,12 +138,29 @@
           code:123456,
           password:this.dynamicValidateForm.checkPass,
         }).then((res)=>{
-
+          if(res.code === 1000){
+            localStorage.setItem('token',res.data.token)
+            this.$router.push('/user')
+          }
           console.log("注册",res)
+        })
+      },
+      getPsLogin(){
+        getPsLogin({
+          phone:this.dynamicValidateForm.phone,
+          password:this.dynamicValidateForm.password,
+        }).then((res)=>{
+          if(res.code === 1000){
+            localStorage.setItem('token',res.data.token)
+            this.$router.push('/user')
+          }
+
+          console.log("登录",res)
         })
       },
       getDelete(){
         getDelete().then((res)=>{
+
           console.log("123",res)
         })
       },
