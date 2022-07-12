@@ -7,6 +7,10 @@ axios.defaults.withCredentials = true;
 
 //添加拦截器
 axios.interceptors.request.use(function (config) {
+  console.log("111",config)
+  if(config.method!=='get'){
+    config.data = qs.stringify(config.data)
+  }
   config.headers['Content-Type'] = 'application/json';
   config.headers.token = localStorage.getItem('token');
   return config
