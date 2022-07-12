@@ -36,8 +36,7 @@ export default {
         })
     })
   },
-  post: function (path = '', data = {}, contentType = 'json') {
-    data = contentType == 'json' ? JSON.stringify(data) : qs.stringify(data)
+  post: function (path = '', data = {}) {
     return new Promise(function (resolve, reject) {
       axios.post(path, data)
         .then(function (response) {
