@@ -65,6 +65,7 @@
 </template>
 
 <script>
+  import {getRegister} from '../api/index'
   export default {
     name: "login",
     data: function () {
@@ -124,16 +125,29 @@
     },
     methods: {
       submitLogin() {
-        let userName = this.dynamicValidateForm.phone;
-        let password = this.dynamicValidateForm.password;
-        if (userName == 'admin' && password == '123456') {
-          localStorage.setItem('token', '123');
-          this.$router.push({
-            path: '/home'
-          })
-        } else {
-          return
+        if(this.register){
+          this.getRegister()
         }
+        // let userName = this.dynamicValidateForm.phone;
+        // let password = this.dynamicValidateForm.password;
+        // if (userName === 'admin' && password === '123456') {
+        //   localStorage.setItem('token', '123');
+        //   this.$router.push({
+        //     path: '/home'
+        //   })
+        // } else {
+        //   return
+        // }
+
+      },
+      getRegister(){
+        getRegister({
+          phone:this.dynamicValidateForm.phone,
+          code:123456,
+          password:this.dynamicValidateForm.checkPass,
+        }).then((res)=>{
+          console.log("注册",res)
+        })
       }
     }
   }
