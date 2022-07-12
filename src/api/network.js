@@ -5,13 +5,16 @@ axios.defaults.baseURL = 'http://pinxue.ngrok.24k.fun/system'
 axios.defaults.timeout = 3000;
 axios.defaults.withCredentials = true;
 
+
 //添加拦截器
 axios.interceptors.request.use(function (config) {
-  console.log("111",config)
-  if(config.method!=='get'){
-    config.data = qs.stringify(config.data)
+  if(config.method === 'post'){
+    config.headers['Content-Type'] = 'application/json';
+    if(config.url==='/user/register'){
+      config.headers['Content-Type'] = 'multipart/form-data';
+    }
   }
-  config.headers['Content-Type'] = 'application/json';
+  // config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
   config.headers.token = localStorage.getItem('token');
   return config
 }, function (error) {
@@ -40,7 +43,9 @@ export default {
         })
     })
   },
-  post: function (path = '', data = {}) {
+
+post: function (path = '', data = {}, contentType = 'json') {
+  data = contentType === 'json' ? JSON.stringify(data) : qs.stringify(data)
     return new Promise(function (resolve, reject) {
       axios.post(path, data)
         .then(function (response) {
