@@ -8,12 +8,7 @@ axios.defaults.withCredentials = true;
 
 //添加拦截器
 axios.interceptors.request.use(function (config) {
-  if(config.method === 'post'){
-    config.headers['Content-Type'] = 'application/json';
-    if(config.url==='/user/register'){
-      config.headers['Content-Type'] = 'multipart/form-data';
-    }
-  }
+
   // config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
   config.headers.token = localStorage.getItem('token');
   return config
@@ -43,11 +38,23 @@ export default {
         })
     })
   },
-
-post: function (path = '', data = {}, contentType = 'json') {
-  data = contentType === 'json' ? JSON.stringify(data) : qs.stringify(data)
+  post: function (path = '', data = {}, contentType = 'json') {
+    data = contentType === 'json' ? JSON.stringify(data) : qs.stringify(data)
+    let config = contentType === 'json' ? { headers: { "Content-Type": 'application/json; charset=utf-8' } } :
+      contentType === 'form' ? { headers: { "Content-Type": 'multipart/form-data' } } : {}
     return new Promise(function (resolve, reject) {
-      axios.post(path, data)
+      axios.post(path, data, config)
+        .then(function (response) {
+          resolve(response)
+        })
+        .catch(function (error) {
+          reject(error)
+        })
+    })
+  },
+  delete: function (path = '', data = {}, contentType = 'json') {
+    return new Promise(function (resolve, reject) {
+      axios.delete(path, data)
         .then(function (response) {
           resolve(response)
         })

@@ -3,6 +3,7 @@ import NetWork from './network'
 
 //注册
 export const getRegister = (data) => NetWork.post('/user/register',data)
+export const getDelete = () => NetWork.delete('/user/removeByPhone/{phone:15525780621}')
 //广告信息
 export const getBanner = () => NetWork.get('')
 // 获取职位详情
