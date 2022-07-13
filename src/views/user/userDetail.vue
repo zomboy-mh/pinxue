@@ -6,12 +6,10 @@
         <div>个人头像</div>
         <el-upload
           class="avatar-uploader"
-          action="#"
+          action="http://pinxue.ngrok.24k.fun/system/file/singleUp"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload"
-          :http-request="getSingleUp"
-          :file-list="fileList"
           :headers="config"
         >
           <img v-if="detailFrom.headerImg.userImageUrl" :src="detailFrom.headerImg.userImageUrl" class="avatar">
@@ -140,11 +138,12 @@
           }
         },
         token: '',
-        fileList:[]
+        filelist:[]
       }
     },
     mounted() {
       this.token = localStorage.getItem('token')
+
     },
     computed:{
       config() {
@@ -156,10 +155,12 @@
     methods: {
       getSingleUp(item){
         console.log(item.file)
-        // let fd = new FormData()
-        // fd.append('file', item.file)
-        // console.log(fd)
-        getSingleUp(item.file).then((res)=>{
+        this.file = new FormData()
+        this.file.append('file', item.file)
+        console.log(fd)
+        getSingleUp({
+          file:item.file
+        }).then((res)=>{
           console.log(res);
         })
       },
@@ -169,7 +170,6 @@
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
         const isLt2M = file.size / 1024 / 1024 < 2;
-
         if (!isJPG) {
           this.$message.error('上传头像图片只能是 JPG 格式!');
         }
