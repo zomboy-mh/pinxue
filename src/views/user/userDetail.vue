@@ -6,11 +6,12 @@
         <div>个人头像</div>
         <el-upload
           class="avatar-uploader"
-          action="http://pinxue.ngrok.24k.fun/system/file/singleUp"
+          action="#"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload"
           :headers="config"
+          :http-request="getSingleUp"
         >
           <img v-if="detailFrom.headerImg.userImageUrl" :src="detailFrom.headerImg.userImageUrl" class="avatar">
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
@@ -155,17 +156,15 @@
     methods: {
       getSingleUp(item){
         console.log(item.file)
-        this.file = new FormData()
-        this.file.append('file', item.file)
-        console.log(fd)
-        getSingleUp({
-          file:item.file
-        }).then((res)=>{
+        let formData = new FormData()
+        formData.set('file', item.file)
+        getSingleUp(formData).then((res)=>{
           console.log(res);
+          this.detailFrom.headerImg.userImageUrl = res.data.url
         })
       },
       handleAvatarSuccess(res, file) {
-        this.detailFrom.userImageUrl = URL.createObjectURL(file.raw);
+        this.detailFrom.headerImg.userImageUrl = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
@@ -220,23 +219,24 @@
         overflow: hidden;
       }
 
-      .avatar-uploader .el-upload:hover {
-        border-color: #409EFF;
-      }
+      /*.avatar-uploader .el-upload:hover {*/
+      /*  border-color: #409EFF;*/
+      /*}*/
 
       .avatar-uploader-icon {
         font-size: 28px;
         color: #8c939d;
-        width: 178px;
-        height: 178px;
-        line-height: 178px;
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
         text-align: center;
       }
-
       .avatar {
-        width: 178px;
-        height: 178px;
-        display: block;
+        width: 90px;
+        height: 90px;
+        border-radius: 45px;
+        margin-right: 10px;
+        display: inline-block;
       }
     }
 
