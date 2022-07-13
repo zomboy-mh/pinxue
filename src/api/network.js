@@ -31,7 +31,7 @@ export default {
         params: data
       })
         .then(function (response) {
-          resolve(response)
+          resolve(response.data)
         })
         .catch(function (error) {
           reject(error)
@@ -39,13 +39,15 @@ export default {
     })
   },
   post: function (path = '', data = {}, contentType = 'json') {
+
     data = contentType === 'json' ? JSON.stringify(data) : qs.stringify(data)
+
     let config = contentType === 'json' ? { headers: { "Content-Type": 'application/json; charset=utf-8' } } :
       contentType === 'form' ? { headers: { "Content-Type": 'multipart/form-data' } } : {}
     return new Promise(function (resolve, reject) {
       axios.post(path, data, config)
         .then(function (response) {
-          resolve(response)
+          resolve(response.data)
         })
         .catch(function (error) {
           reject(error)

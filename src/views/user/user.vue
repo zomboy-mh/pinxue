@@ -7,7 +7,7 @@
 
       </div>
       <div class="headerName">
-        Zomboy
+        {{this.userPhone}}
       </div>
     </div>
 
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex";
+
 export default {
   name: 'user',
   data: function () {
@@ -64,6 +66,11 @@ export default {
              },
            ]
     }
+  },
+  computed:{
+    ...mapGetters([
+      'userPhone'
+    ])
   },
   methods: {
     getBanner () {
