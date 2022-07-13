@@ -5,6 +5,8 @@ import NetWork from './network'
 export const getRegister = (data) => NetWork.post('/user/register',data)
 //登录
 export const getPsLogin = (data) => NetWork.post('/user/ps_login',data)
+//文件上传
+export const getSingleUp = (data) => NetWork.post('/file/singleUp',data)
 export const getDelete = () => NetWork.delete('/user/removeByPhone/15525780621')
 //广告信息
 export const getBanner = () => NetWork.get('')

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import state from './state'
+import createPersistedState from "vuex-persistedstate"
 import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
@@ -12,7 +13,15 @@ export default new Vuex.Store({
   mutations:mutations,
   actions:actions,
   getters:getters,
-
+  plugins: [createPersistedState({
+    storage: window.sessionStorage,
+    reducer(val) {
+      return { // 只储存state中的user
+        userPhone: val.userPhone,
+        userId:val.userId
+      }
+    }
+  })]
  /* //state: 用于保存全局共享数据
   state: {
   },
@@ -29,3 +38,4 @@ export default new Vuex.Store({
   modules: {
   }*/
 })
+

@@ -66,6 +66,7 @@
 
 <script>
   import {getRegister,getDelete,getPsLogin} from '../api/index'
+  import {mapGetters,mapActions} from 'vuex'
   export default {
     name: "login",
     data: function () {
@@ -124,7 +125,16 @@
         register: false
       }
     },
+    computed:{
+      ...mapGetters([
+        'userPhone'
+      ])
+    },
     methods: {
+      ...mapActions([
+        'setUserPhone',
+        'setUserId'
+      ]),
       submitLogin() {
         if(this.register){
           this.getRegister()
@@ -152,6 +162,9 @@
         }).then((res)=>{
           if(res.code === 1000){
             localStorage.setItem('token',res.data.token)
+            this.setUserPhone(res.data.phone)
+            this.setUserId(res.data.id)
+            console.log(this.userPhone)
             this.$router.push('/user')
           }
 
