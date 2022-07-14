@@ -169,7 +169,7 @@
             console.log('登录',res)
             this.setToken(res.data.token)
             this.setNickName(res.data.detail.nickName)
-            this.setUserImageUrl(res.data.detail.avatar.url);
+            this.setUserImageUrl(res.data.detail.avatar ? res.data.detail.avatar.url : '');
             this.setUserId(res.data.detail.id)
             this.$router.push('/user')
           }

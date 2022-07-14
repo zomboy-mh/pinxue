@@ -171,7 +171,7 @@
       getUserDetail() {
         getUserDetail(this.userId).then((res) => {
           console.log(res);
-          this.headerImg.userImageUrl = res.data.avatar.url
+          this.headerImg.userImageUrl = res.data.avatar ? res.data.avatar.url : ''
           this.detailFrom.nickName = res.data.nickName
           this.detailFrom.identity = res.data.identity==='0'?'在校':'毕业'
         })
