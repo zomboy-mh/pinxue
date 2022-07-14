@@ -4,7 +4,7 @@
         <img src="../../assets/images/banck.png" alt="">
       </div>
       <p class="header-title">{{title}}</p>
-      <div class="header-right" v-if="title=='个人信息'">
+      <div class="header-right" v-if="title=='个人信息'" @click="setUserDetail()">
         保存
 <!--        <img src="../assets/images/more.png" alt="">-->
       </div>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+  import {getSingleUp,setUserDetail} from '../../api/index'
+  import {mapActions} from "vuex";
 export default {
   name: 'userHeader',
   data () {
@@ -23,7 +25,12 @@ export default {
       index: 0
     }
   },
+  computed:{
+  },
   methods: {
+    ...mapActions([
+      'setNickName',
+    ]),
     changeTheme () {
       this.index++
       if (this.index >= this.themes.length) {
@@ -33,6 +40,22 @@ export default {
     },
     back () {
       window.history.back()
+    },
+    setUserDetail(){
+      console.log("123",this.detailFrom.identity);
+      this.setNickName(this.detailFrom.nickName)
+      setUserDetail(this.detailFrom).then((res)=>{
+        console.log("保存",res)
+        if(res.code === 1000){
+          this.$message({
+            message: '保存成功',
+            type: 'success',
+            center: true,
+          });
+        }
+
+
+      })
     }
   },
   props: {
@@ -40,7 +63,13 @@ export default {
       type: String,
       default: '',
       required: true
+    },
+    detailFrom: {
+      type: Object,
+      default: ()=>({}),
+      required: true
     }
+
   }
 }
 </script>
@@ -48,6 +77,7 @@ export default {
 <style scoped lang="scss">
   @import "../../assets/css/variable";
   @import "../../assets/css/mixin";
+
   .header{
     width: 100%;
     height: 100px;

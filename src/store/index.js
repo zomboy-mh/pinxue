@@ -14,11 +14,14 @@ export default new Vuex.Store({
   actions:actions,
   getters:getters,
   plugins: [createPersistedState({
-    storage: window.sessionStorage,
+    storage: window.localStorage,
     reducer(val) {
       return { // 只储存state中的user
         userPhone: val.userPhone,
-        userId:val.userId
+        userId:val.userId,
+        token:val.token,
+        nickName:val.nickName,
+        userImageUrl:val.userImageUrl
       }
     }
   })]

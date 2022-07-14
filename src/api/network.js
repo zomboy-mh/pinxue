@@ -1,5 +1,5 @@
 import axios from 'axios'
-import qs from 'qs'
+import router from "../router";
 // 进行一些全局配置
 axios.defaults.baseURL = 'http://pinxue.ngrok.24k.fun/system'
 axios.defaults.timeout = 3000;
@@ -18,6 +18,11 @@ axios.interceptors.request.use(function (config) {
 //响应拦截器
 axios.interceptors.response.use(function (response) {
   //对响应数据做什么
+
+  if(response.data&&response.data.code === 1006){
+    localStorage.clear()
+    router.push({path:'/login'})
+  }
   return response
 }, function (error) {
   return Promise.reject(error)
@@ -38,14 +43,38 @@ export default {
         })
     })
   },
-  post: function (path = '', data = {}, contentType = 'json') {
-
-    data = contentType === 'json' ? JSON.stringify(data) : qs.stringify(data)
-
+  /**
+   * @param {string} path
+   * @param {*} data
+   */
+  post: function (path = '', data = {}, contentType) {
+    if(contentType === 'json'){
+      data = JSON.stringify(data)
+    }
     let config = contentType === 'json' ? { headers: { "Content-Type": 'application/json; charset=utf-8' } } :
       contentType === 'form' ? { headers: { "Content-Type": 'multipart/form-data' } } : {}
     return new Promise(function (resolve, reject) {
       axios.post(path, data, config)
+        .then(function (response) {
+          resolve(response.data)
+        })
+        .catch(function (error) {
+          reject(error)
+        })
+    })
+  },
+  /**
+   * @param {string} path
+   * @param {*} data
+   */
+  put: function (path = '', data = {}, contentType) {
+    if(contentType === 'json'){
+      data = JSON.stringify(data)
+    }
+    let config = contentType === 'json' ? { headers: { "Content-Type": 'application/json; charset=utf-8' } } :
+      contentType === 'form' ? { headers: { "Content-Type": 'multipart/form-data' } } : {}
+    return new Promise(function (resolve, reject) {
+      axios.put(path, data, config)
         .then(function (response) {
           resolve(response.data)
         })
