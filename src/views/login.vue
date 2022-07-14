@@ -133,7 +133,10 @@
     methods: {
       ...mapActions([
         'setUserPhone',
-        'setUserId'
+        'setUserId',
+        'setToken',
+        'setNickName',
+        'setUserImageUrl'
       ]),
       submitLogin() {
         if(this.register){
@@ -149,10 +152,12 @@
           password:this.dynamicValidateForm.checkPass,
         }).then((res)=>{
           if(res.code === 1000){
-            localStorage.setItem('token',res.data.token)
+            this.setToken(res.data.token)
+            this.setNickName(res.data.detail.nickName)
+            this.setUserImageUrl('http://pinxue.ngrok.24k.fun/sta/upload/normal/2022/07/14/微信图片_20220614142312.jpg');
+            this.setUserId(res.data.detail.id)
             this.$router.push('/user')
           }
-          console.log("注册",res)
         })
       },
       getPsLogin(){
@@ -161,20 +166,17 @@
           password:this.dynamicValidateForm.password,
         }).then((res)=>{
           if(res.code === 1000){
-            localStorage.setItem('token',res.data.token)
-            this.setUserPhone(res.data.phone)
-            this.setUserId(res.data.id)
-            console.log(this.userPhone)
+            console.log('登录',res)
+            this.setToken(res.data.token)
+            this.setNickName(res.data.detail.nickName)
+            this.setUserImageUrl(res.data.detail.avatar.url);
+            this.setUserId(res.data.detail.id)
             this.$router.push('/user')
           }
-
-          console.log("登录",res)
         })
       },
       getDelete(){
         getDelete().then((res)=>{
-
-          console.log("123",res)
         })
       },
     }

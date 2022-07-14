@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <userHeader :title="headerName"></userHeader>
+    <userHeader :title="headerName" :detailFrom="detailFrom"></userHeader>
     <div class="detailBox">
       <div class="headPortrait">
         <div>个人头像</div>
@@ -10,51 +10,43 @@
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload"
-          :headers="config"
+          :headers="{token:this.token}"
           :http-request="getSingleUp"
         >
-          <img v-if="detailFrom.headerImg.userImageUrl" :src="detailFrom.headerImg.userImageUrl" class="avatar">
+          <img v-if="headerImg.userImageUrl" :src="headerImg.userImageUrl" class="avatar">
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
-        <!--          <img class="headPortraitImg" src="../../assets/images/04.jpg" alt="">-->
       </div>
       <div class="detailItem">
         <div class="detailItemTxt">昵称</div>
-        <!--        <div class="detailItemValue">王强</div>-->
         <div class="detailItemSelect1">
-          <el-input v-model="detailFrom.niceName" placeholder="请输入昵称"></el-input>
+          <el-input v-model="detailFrom.nickName" placeholder="请输入昵称"></el-input>
         </div>
       </div>
-      <div class="detailItem">
-        <div class="detailItemTxt">性别</div>
-        <div class="detailItemValue">男</div>
-
-        <!--        <div class="detailItemSelect1">-->
-        <!--          <el-select  :popper-append-to-body="false" v-model="value" placeholder="请选择">-->
-        <!--            <el-option-->
-        <!--              v-for="item in options"-->
-        <!--              :key="item.value"-->
-        <!--              :label="item.label"-->
-        <!--              :value="item.value">-->
-        <!--            </el-option>-->
-        <!--          </el-select>-->
-        <!--        </div>-->
-      </div>
-      <div class="detailItem">
-        <div class="detailItemTxt">出生日期</div>
-        <div class="detailItemValue">2022-06-21</div>
-        <!--        <div class="detailItemSelect2">-->
-        <!--          <el-date-picker-->
-        <!--            v-model="value1"-->
-        <!--            type="date"-->
-        <!--            placeholder="选择日期">-->
-        <!--          </el-date-picker>-->
-        <!--        </div>-->
-      </div>
+<!--      <div class="detailItem">-->
+<!--        <div class="detailItemTxt">姓名</div>-->
+<!--        <div class="detailItemSelect1">-->
+<!--          <el-input v-model="detailFrom.fullName" placeholder="请输入姓名"></el-input>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="detailItem">-->
+<!--        <div class="detailItemTxt">身份号</div>-->
+<!--        <div class="detailItemSelect2">-->
+<!--          <el-input v-model="detailFrom.idNumber" placeholder="请输入完整身份证号"></el-input>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="detailItem">-->
+<!--        <div class="detailItemTxt">性别</div>-->
+<!--        <div class="detailItemValue">男</div>-->
+<!--      </div>-->
+<!--      <div class="detailItem">-->
+<!--        <div class="detailItemTxt">出生日期</div>-->
+<!--        <div class="detailItemValue">2022-06-21</div>-->
+<!--      </div>-->
       <div class="detailItem">
         <div class="detailItemTxt">身份</div>
         <div class="detailItemSelect1">
-          <el-select :popper-append-to-body="false" v-model="identityValue" placeholder="请选择">
+          <el-select :popper-append-to-body="false" v-model="detailFrom.identity" placeholder="请选择">
             <el-option
               v-for="item in identityList"
               :key="item.value"
@@ -74,26 +66,26 @@
       <div class="detailItem">
         <div class="detailItemTxt">体重</div>
         <div class="detailItemSelect3">
-          <el-input v-model="detailFrom.weight" placeholder="请输入体重"></el-input>
+          <el-input v-model="detailFrom.bodyWeight" placeholder="请输入体重"></el-input>
           kg
         </div>
       </div>
       <div class="detailItem">
         <div class="detailItemTxt">居住地点</div>
         <div class="detailItemSelect4">
-          <el-input v-model="detailFrom.live" placeholder="请输入居住地点"></el-input>
+          <el-input v-model="detailFrom.placeOfResidence" placeholder="请输入居住地点"></el-input>
         </div>
       </div>
       <div class="detailItem">
         <div class="detailItemTxt">微信</div>
         <div class="detailItemSelect4">
-          <el-input v-model="detailFrom.weChat" placeholder="请输入微信号"></el-input>
+          <el-input v-model="detailFrom.wechatNum" placeholder="请输入微信号"></el-input>
         </div>
       </div>
       <div class="detailItem">
         <div class="detailItemTxt">QQ</div>
         <div class="detailItemSelect4">
-          <el-input v-model="detailFrom.qq" placeholder="请输入QQ号"></el-input>
+          <el-input v-model="detailFrom.qqNum" placeholder="请输入QQ号"></el-input>
         </div>
       </div>
     </div>
@@ -102,7 +94,8 @@
 
 <script>
   import userHeader from './userHeader'
-  import {getSingleUp} from '../../api/index'
+  import {getSingleUp,getUserDetail} from '../../api/index'
+  import {mapGetters,mapActions} from 'vuex'
 
   export default {
     name: "userDetail",
@@ -112,59 +105,57 @@
     data: function () {
       return {
         headerName: '个人信息',
-        // options: [{
-        //   value: '选项1',
-        //   label: '男'
-        // }, {
-        //   value: '选项2',
-        //   label: '女'
-        // }],
+        headerImg: {
+          userImageUrl: ''
+        },
         identityList: [{
-          value: '选项1',
+          value: 0,
           label: '在校'
         }, {
-          value: '选项2',
+          value: 1,
           label: '毕业'
         }],
-        identityValue: '',
         detailFrom: {
-          niceName: '',
-          qq: '',
-          weChat: '',
-          live: '',
+          nickName: '',
+          fullName:'',
+          idNumber:'',
+          qqNum: '',
+          wechatNum: '',
+          placeOfResidence: '',
           height: '',
-          weight: '',
-          headerImg: {
-            userImageUrl: ''
-          }
+          bodyWeight: '',
+          identity:''
         },
-        token: '',
-        filelist:[]
+        filelist: []
       }
     },
     mounted() {
-      this.token = localStorage.getItem('token')
+      this.detailFrom.id = this.userId;
+      this.getUserDetail()
+    },
+    computed: {
+      ...mapGetters([
+        'token',
+        'userId',
+        'userImageUrl'
+      ])
+    },
 
-    },
-    computed:{
-      config() {
-        return { token: this.token,
-            // contentType: 'application/json; charset=utf-8'
-            };
-      },
-    },
     methods: {
-      getSingleUp(item){
-        console.log(item.file)
+      ...mapActions([
+        'setUserImageUrl'
+      ]),
+      getSingleUp(item) {
         let formData = new FormData()
         formData.set('file', item.file)
-        getSingleUp(formData).then((res)=>{
-          console.log(res);
-          this.detailFrom.headerImg.userImageUrl = res.data.url
+        getSingleUp(formData).then((res) => {
+          this.detailFrom.avatar=res.data.id
+          this.headerImg.userImageUrl = res.data.url;
+          this.setUserImageUrl(res.data.url);
         })
       },
       handleAvatarSuccess(res, file) {
-        this.detailFrom.headerImg.userImageUrl = URL.createObjectURL(file.raw);
+        this.headerImg.userImageUrl = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
@@ -176,7 +167,15 @@
           this.$message.error('上传头像图片大小不能超过 2MB!');
         }
         return isJPG && isLt2M;
-      }
+      },
+      getUserDetail() {
+        getUserDetail(this.userId).then((res) => {
+          console.log(res);
+          this.headerImg.userImageUrl = res.data.avatar.url
+          this.detailFrom.nickName = res.data.nickName
+          this.detailFrom.identity = res.data.identity==='0'?'在校':'毕业'
+        })
+      },
     }
   }
 </script>
@@ -231,6 +230,7 @@
         line-height: 90px;
         text-align: center;
       }
+
       .avatar {
         width: 90px;
         height: 90px;
@@ -299,6 +299,7 @@
         ::v-deep .el-input__inner {
           height: 100px;
           width: 180px;
+          text-align: right;
           @include font_size($font_medium);
           line-height: 100px;
           border: 1px solid #FFFFFF;
@@ -309,6 +310,16 @@
         ::v-deep .el-input__inner {
           height: 80px;
           width: 180px;
+          text-align: right;
+          @include font_size($font_medium);
+          line-height: 60px;
+          border: 1px solid #FFFFFF;
+        }
+      }
+      .detailItemSelect2{
+        ::v-deep .el-input__inner {
+          height: 80px;
+          width: 320px;
           @include font_size($font_medium);
           line-height: 60px;
           border: 1px solid #FFFFFF;
@@ -319,6 +330,7 @@
         ::v-deep .el-input__inner {
           height: 80px;
           width: 500px;
+          text-align: right;
           @include font_size($font_medium);
           line-height: 60px;
           border: 1px solid #FFFFFF;

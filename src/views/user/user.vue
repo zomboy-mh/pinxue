@@ -3,11 +3,9 @@
   <div class="header">
     <div class="headerBox">
       <img class="userHeaderBg" src="../../assets/images/userHeaderBg.png" alt="">
-      <div class="headerImg">
-
-      </div>
+      <img class="headerImg" :src="this.userImageUrl" alt="">
       <div class="headerName">
-        {{this.userPhone}}
+        {{this.nickName}}
       </div>
     </div>
 
@@ -69,7 +67,9 @@ export default {
   },
   computed:{
     ...mapGetters([
-      'userPhone'
+      'userPhone',
+      'nickName',
+      'userImageUrl'
     ])
   },
   methods: {
@@ -80,9 +80,9 @@ export default {
       this.$router.push('/user/userPay/')
     },
     userDetailPath(index) {
-      if (index == 0) {
+      if (index === 0) {
         this.$router.push('/user/userDetail/')
-      } else if(index == 1)
+      } else if(index === 1)
       {
 
       }
@@ -123,8 +123,6 @@ export default {
           width: 120px;
           height: 120px;
           border-radius: 60px;
-          background: url("../../assets/images/04.jpg") no-repeat;
-          background-size: 100% 100%;
           z-index: 1;
           border: 2px solid #FFFFFF;
         }

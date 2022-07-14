@@ -43,6 +43,10 @@ export default {
         })
     })
   },
+  /**
+   * @param {string} path
+   * @param {*} data
+   */
   post: function (path = '', data = {}, contentType) {
     if(contentType === 'json'){
       data = JSON.stringify(data)
@@ -51,6 +55,26 @@ export default {
       contentType === 'form' ? { headers: { "Content-Type": 'multipart/form-data' } } : {}
     return new Promise(function (resolve, reject) {
       axios.post(path, data, config)
+        .then(function (response) {
+          resolve(response.data)
+        })
+        .catch(function (error) {
+          reject(error)
+        })
+    })
+  },
+  /**
+   * @param {string} path
+   * @param {*} data
+   */
+  put: function (path = '', data = {}, contentType) {
+    if(contentType === 'json'){
+      data = JSON.stringify(data)
+    }
+    let config = contentType === 'json' ? { headers: { "Content-Type": 'application/json; charset=utf-8' } } :
+      contentType === 'form' ? { headers: { "Content-Type": 'multipart/form-data' } } : {}
+    return new Promise(function (resolve, reject) {
+      axios.put(path, data, config)
         .then(function (response) {
           resolve(response.data)
         })
