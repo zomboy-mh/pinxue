@@ -50,24 +50,26 @@ export default {
   @import "../../assets/css/mixin";
   .header{
     width: 100%;
-    height: 100px;
+    height: 60px;
     @include bg_color();
     display: flex;
     justify-content: space-between;
     align-items: center;
     .header-left{
-      width: 70px;
-      height: 70px;
-      line-height: 60px;
+      width: 60px;
+      height: 60px;
+      line-height: 45px;
+      margin-left: 10px;
       img{
-        width: 55px;
-        height: 55px;
+        width: 30px;
+        height: 30px;
       }
     }
     .header-right{
-      width: 70px;
+      width: 60px;
       height: 70px;
-      @include font_size($font_large);
+      font-size: 20px;
+      //@include font_size($font_large);
       /*background: #000;*/
       color: #FFFFFF;
       line-height: 70px;
@@ -78,7 +80,8 @@ export default {
       line-height: 100px;
       color: #fff;
       font-weight: bold;
-      @include font_size($font_large);
+      font-size: 22px;
+      //@include font_size($font_large);
       @include no-wrap()
     }
   }

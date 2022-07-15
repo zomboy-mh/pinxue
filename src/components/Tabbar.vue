@@ -30,7 +30,7 @@ export default {
   @import "../assets/css/mixin";
 .tabbar{
   width: 100%;
-  height: 80px;
+  height: 62px;
   @include bg_sub_color();
   display: flex;
   justify-content: space-around;
@@ -42,7 +42,7 @@ export default {
   .item{
     position: relative;
     span{
-      line-height: 130px;
+      line-height: 96px;
       font-size: 18px;
       //@include font_size($font_medium_s);
       @include font_color()
@@ -60,10 +60,10 @@ export default {
       position: absolute;
       left: 50%;
       top: 50%;
-      margin-left: -20px;
-      margin-top: -30px;
-      width: 40px;
-      height: 40px;
+      margin-left: -15px;
+      margin-top: -20px;
+      width: 30px;
+      height: 30px;
       //@include bg_color()
     }
   }

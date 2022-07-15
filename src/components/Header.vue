@@ -36,15 +36,15 @@ export default {
   @import "../assets/css/mixin";
   .header{
     width: 100%;
-    height: 80px;
+    height: 60px;
     @include bg_color();
     display: flex;
     justify-content: space-between;
     .header-left,.header-right{
-      width: 70px;
+      width: 55px;
       height: 70px;
       /*background: #000;*/
-      margin-top: 18px;
+      margin-top: 8px;
       img{
         width: 40px;
         height: 40px;
@@ -52,7 +52,7 @@ export default {
     }
     .header-title{
       text-align: center;
-      line-height: 80px;
+      line-height: 60px;
       color: #fff;
       font-weight: bold;
       font-size: 20px;

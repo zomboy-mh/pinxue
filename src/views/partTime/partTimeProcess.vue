@@ -47,24 +47,24 @@
   }
   ::v-deep .el-tabs__nav{
     /*padding-left: 20px;*/
-    padding-right: 20px;
+    padding-right: 10px;
   }
   ::v-deep .el-tabs__item{
-    height: 80px;
-    @include font_size($font_large);
-    line-height: 80px;
+    height: 60px;
+    font-size: 16px;
+    //@include font_size($font_large);
+    line-height: 60px;
   }
   ::v-deep .el-tabs__nav-prev{
-    font-size: 40px;
-    line-height: 40px;
-    height: 40px;
-    margin-top: 20px;
+    font-size: 30px;
+    line-height: 60px;
+    height: 60px;
   }
   ::v-deep .el-tabs__nav-next{
-    font-size: 40px;
-    line-height: 40px;
-    height: 40px;
-    margin-top: 20px;
+    font-size: 30px;
+    line-height: 60px;
+    height: 60px;
+    /*margin-top: 10px;*/
   }
 }
 

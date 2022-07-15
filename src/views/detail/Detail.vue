@@ -168,7 +168,7 @@
     background: #fcf6ee;
     .detailBox{
       position: fixed;
-      top: 100px;
+      top: 80px;
       bottom: 0;
       left: 0;
       right: 0;
@@ -179,7 +179,8 @@
         padding: 3%;
         background: #FFFFFF;
         .jobName{
-          @include font_size($font_large);
+          font-size: 30px;
+          //@include font_size($font_large);
           font-weight: bold;
           height: 60px;
           line-height: 60px;
@@ -189,9 +190,11 @@
           align-items: center;
           font-weight: bold;
           color: red;
-          @include font_size($font_medium);
+          font-size: 25px;
+          //@include font_size($font_medium);
           h3{
-            @include font_size($font_medium_s);
+            font-size: 20px;
+            //@include font_size($font_medium_s);
           }
         }
         .publish{
@@ -206,6 +209,7 @@
             display: flex;
             align-items: center;
             p{
+              font-size: 20px;
               margin-left: 5px;
             }
           }
@@ -214,35 +218,38 @@
             display: flex;
             align-items: center;
             p{
+              font-size: 20px;
               margin-left: 5px;
             }
           }
         }
         .jobInvite{
           width: 94%;
-          height: 80px;
+          height: 60px;
           margin-left: 3%;
           margin-top: 10px;
           background: #f1f1f1;
           display: flex;
           justify-content: space-between;
           text-align: center;
-          line-height: 80px;
+          line-height: 60px;
           border-radius: 5px;
           .jobInviteLeft{
             margin-left: 15px;
+            font-size: 20px;
             color: #ae4638;
           }
           .jobInviteRight{
             display: flex;
             text-align: center;
             justify-content: center;
-            line-height: 80px;
+            line-height: 60px;
             color: #8a8a8a;
             margin-right: 15px;
+            font-size: 16px;
             img{
-              width: 50px;
-              height: 50px;
+              width: 30px;
+              height: 30px;
               margin-top: 10px;
             }
           }
@@ -255,8 +262,10 @@
             .jobTypeName{
               color: #8a8a8a;
               margin-right: 10px;
+              font-size: 18px;
             }
             .jobValue{
+              font-size: 18px;
               margin-right: 20px;
             }
           }
@@ -270,6 +279,7 @@
             margin-top: 20px;
             border-top: #666666 1px solid;
             padding-top: 20px;
+            font-size: 20px;
             .jobPlaceName{
 
             }
@@ -286,13 +296,15 @@
         margin-top: 15px;
         background: #FFFFFF;
         /*padding: 30px;*/
+        font-size: 16px;
         .jobDetailTitle{
           display: flex;
           border-bottom: #666666 1px solid;
           padding-bottom: 20px;
+          font-size: 20px;
           .jobDetailImg{
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             margin-right: 10px;
           }
 
@@ -300,7 +312,8 @@
         .jobDetailBody{
           color: #8a8a8a;
           .jobDetailType{
-            @include font_size($font_medium);
+            font-size: 20px;
+            //@include font_size($font_medium);
             height: 40px;
             line-height: 40px;
             margin-top: 10px;
@@ -313,17 +326,20 @@
           padding-bottom: 20px;
           .businessTitleLift{
             display: flex;
+            font-size: 20px;
             .businessImg{
-              width: 40px;
-              height: 40px;
+              width: 30px;
+              height: 30px;
               margin-right: 10px;
             }
+
           }
           .businessTitleRight{
             display: flex;
+            /*font-size: 20px;*/
             .businessStarImg{
-              width: 40px;
-              height: 40px;
+              width: 25px;
+              height: 25px;
             }
           }
         }
@@ -331,13 +347,15 @@
           display: flex;
           margin-top: 20px;
           height: 50px;
+          font-size: 20px;
           .businessLogo{
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             margin-right: 20px;
           }
           .businessName{
-            @include font_size($font_medium);
+            font-size: 20px;
+            //@include font_size($font_medium);
             height: 40px;
             line-height: 40px;
           }

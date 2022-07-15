@@ -91,44 +91,45 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      margin-top: 50px;
+      margin-top: 40px;
       .topLeft{
         width: 450px;
-        height: 200px;
+        height: 180px;
         margin-left: 50px;
+        margin-right: 10px;
         .businessName{
-          font-size: 38px;
+          font-size: 25px;
           color: #FFFFFF;
         }
         .businessTaps{
-          font-size: 25px;
+          font-size: 20px;
           color: #cccccc;
         }
       }
       .topRight{
-        width: 180px;
-        height: 180px;
-        margin-right: 50px;
+        width:200px;
+        height: 120px;
+        margin-right: 20px;
         border-radius: 5px;
 
         .businessImg{
-          width: 100%;
-          height: 100%;
+          width: 120px;
+          height: 120px;
           border-radius: 5px;
         }
       }
     }
     .businessBottom{
       width: 100%;
-      height: 80px;
+      height: 40px;
       align-items: center;
       display: flex;
       padding-left: 50px;
       .businessTips{
         margin-right: 10px;
         padding: 5px 20px;
-        line-height: 50px;
-        font-size: 25px;
+        line-height: 20px;
+        font-size: 20px;
         color: #cccccc;
         background: #46475b;
         border-radius: 25px;
@@ -138,7 +139,7 @@
   .detailBottom{
     position: absolute;
     left: 0;
-    top: 450px;
+    top: 380px;
     background: #FFFFFF;
     width: 100%;
     height: 100%;
@@ -153,9 +154,10 @@
       padding-right: 20px;
     }
     ::v-deep .el-tabs__item{
-      height: 80px;
-      @include font_size($font_large);
-      line-height: 80px;
+      height: 60px;
+      font-size: 20px;
+      //@include font_size($font_large);
+      line-height: 60px;
     }
     /*::v-deep .el-tabs__nav-prev{*/
     /*  font-size: 40px;*/

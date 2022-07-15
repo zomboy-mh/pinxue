@@ -46,15 +46,16 @@ export default {
   .job-top{
     display: flex;
     justify-content: space-between;
-    height: 84px;
+    height: 65px;
     width: 100%;
-    line-height: 84px;
+    line-height: 65px;
     @include bg_sub_color();
     border-bottom: 1px solid #cccccc;
     /*padding: 0 20px;*/
     /*padding-left: 20px;*/
     h3{
-      @include font_size($font_large);
+      font-size: 22px;
+      //@include font_size($font_large);
       font-weight: bold;
       margin-left: 20px;
       @include font_color()
@@ -66,46 +67,56 @@ export default {
       display: flex;
       align-items: center;
       border-bottom: 1px solid #000;
-      padding-left: 20px;
+      /*padding-left: 20px;*/
+      padding-top: 10px;
+      padding-bottom: 10px;
       img{
-        width: 150px;
-        height: 150px;
-        border-radius: 20px;
-        margin-right: 20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        margin-right: 10px;
+        margin-left: 20px;
       }
       .jobText{
         width: 100%;
+
         .jobTop{
           display: flex;
           justify-content: space-between;
           width: 100%;
           h3{
+            font-size: 20px;
            text-align: center;
-            line-height: 80px;
+            line-height: 40px;
+            margin-top: 10px;
           }
           .Ongoing{
-            width: 80px;
-            height: 80px;
-            margin: 0;
+            width: 65px;
+            height: 65px;
+            margin-top: -10px;
+            margin-right: -1px;
             border-radius: 0;
           }
         }
         .jobDetails{
           display: flex;
           align-items: center;
-          @include font_size($font_medium_s);
+          font-size: 18px;
+          //@include font_size($font_medium_s);
           @include font_color();
-         margin-bottom: 10px;
+         /*margin-bottom: 10px;*/
         }
         .jobWages{
           display: flex;
           align-items: center;
           color: red;
+          font-size: 20px;
         }
       }
       h3{
         font-weight: bold;
-        @include font_size($font_large);
+        font-size: 20px;
+        //@include font_size($font_large);
         //@include font_color()
       }
 

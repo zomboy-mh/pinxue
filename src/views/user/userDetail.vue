@@ -193,20 +193,21 @@
 
     .headPortrait {
       width: 96%;
-      height: 100px;
+      height: 80px;
       display: flex;
       justify-content: space-between;
       text-align: center;
       align-items: center;
-      line-height: 100px;
+      line-height: 80px;
       padding: 12px;
-      @include font_size($font_large);
+      font-size: 20px;
+      //@include font_size($font_large);
       border-bottom: 1px solid #bdb2b2;
 
       .headPortraitImg {
-        width: 90px;
-        height: 90px;
-        border-radius: 45px;
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
         margin-right: 10px;
       }
 
@@ -225,16 +226,16 @@
       .avatar-uploader-icon {
         font-size: 28px;
         color: #8c939d;
-        width: 90px;
-        height: 90px;
-        line-height: 90px;
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
         text-align: center;
       }
 
       .avatar {
-        width: 90px;
-        height: 90px;
-        border-radius: 45px;
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
         margin-right: 10px;
         display: inline-block;
       }
@@ -243,14 +244,15 @@
     .detailItem {
       width: 96%;
       padding: 12px;
-      height: 80px;
+      height: 50px;
       display: flex;
       justify-content: space-between;
       text-align: center;
       align-items: center;
-      line-height: 80px;
+      line-height: 50px;
       border-bottom: 1px solid #bdb2b2;
-      @include font_size($font_large);
+      font-size: 20px;
+      //@include font_size($font_large);
 
       .detailItemValue {
         color: #959595;
@@ -258,22 +260,28 @@
 
       .detailItemSelect1 {
         ::v-deep .el-input__inner {
-          height: 60px;
-          width: 150px;
-          @include font_size($font_medium);
-          line-height: 60px;
+          height: 55px;
+          width: 20px;
+          font-size: 20px;
+          //@include font_size($font_medium);
+          line-height: 55px;
 
         }
 
         ::v-deep .el-input__suffix {
-          line-height: 50px;
-          height: 65px;
+          line-height: 55px;
+          height: 55px;
         }
 
         ::v-deep .el-select-dropdown__item {
-          @include font_size($font_medium);
-          height: 50px;
-          line-height: 50px;
+          font-size: 20px;
+          /*width: 30px;*/
+          //@include font_size($font_medium);
+          height: 40px;
+          line-height: 40px;
+        }
+        ::v-deep .popper__arrow,.popper__arrow::after{
+          margin-left:120px;
         }
 
       }
@@ -284,10 +292,11 @@
         display: flex;
 
         ::v-deep .el-input__inner {
-          height: 60px;
+          height: 55px;
           width: 220px;
-          @include font_size($font_medium);
-          line-height: 60px;
+          font-size: 20px;
+          //@include font_size($font_medium);
+          line-height:55px;
         }
       }
 
@@ -297,42 +306,46 @@
         display: flex;
 
         ::v-deep .el-input__inner {
-          height: 100px;
-          width: 180px;
+          height: 55px;
+          width: 200px;
           text-align: right;
-          @include font_size($font_medium);
-          line-height: 100px;
+          font-size: 20px;
+          //@include font_size($font_medium);
+          line-height: 55px;
           border: 1px solid #FFFFFF;
         }
       }
 
       .detailItemSelect1 {
         ::v-deep .el-input__inner {
-          height: 80px;
-          width: 180px;
+          height: 55px;
+          width: 200px;
           text-align: right;
-          @include font_size($font_medium);
-          line-height: 60px;
+          font-size: 20px;
+          //@include font_size($font_medium);
+          line-height: 55px;
           border: 1px solid #FFFFFF;
         }
       }
       .detailItemSelect2{
         ::v-deep .el-input__inner {
-          height: 80px;
-          width: 320px;
-          @include font_size($font_medium);
-          line-height: 60px;
+          height:55px;
+          width: 200px;
+          font-size: 20px;
+          //@include font_size($font_medium);
+          line-height:55px;
           border: 1px solid #FFFFFF;
         }
       }
 
       .detailItemSelect4 {
         ::v-deep .el-input__inner {
-          height: 80px;
-          width: 500px;
+          height:55px;
+          width: 200px;
           text-align: right;
-          @include font_size($font_medium);
-          line-height: 60px;
+          font-size: 20px;
+          //@include font_size($font_medium);
+          line-height: 55px;
           border: 1px solid #FFFFFF;
         }
       }

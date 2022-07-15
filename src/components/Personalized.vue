@@ -50,16 +50,17 @@ export default {
     .personalized-top{
       display: flex;
       justify-content: space-between;
+      height: 65px;
       width: 100%;
-      height: 84px;
-      line-height: 84px;
+      line-height: 65px;
       @include bg_sub_color();
       border-bottom: 1px solid #cccccc;
       .looknumber{
         margin-right: 20px;
       }
       h3{
-        @include font_size($font_large);
+        font-size: 22px;
+        //@include font_size($font_large);
         font-weight: bold;
         margin-left: 20px;
         @include font_color()
@@ -72,27 +73,29 @@ export default {
       flex-wrap: wrap;
       @include bg_sub_color();
       .item{
-        width: 300px;
-        height: 430px;
+        width: 180px;
+        height: 260px;
         margin-top: 20px;
         background: #ffffff;
-        padding: 10px;
-        padding-left: 30px;
+        padding: 10px 10px 10px 30px;
         img{
-          width: 200px;
-          height: 200px;
-          margin-left: 50px;
+          width: 100px;
+          height: 100px;
+          margin-left: 30px;
         }
         p{
+          font-size: 20px;
           margin-top: 10px;
           margin-bottom: 10px;
         }
         .jobName{
-          @include font_size($font_medium_s);
+          font-size: 15px;
+          //@include font_size($font_medium_s);
           color: #666666;
         }
         .jobNumber{
-          @include font_size($font_medium_s);
+          font-size: 15px;
+          //@include font_size($font_medium_s);
           color: #939393;
           margin-top: 10px;
         }
@@ -103,23 +106,25 @@ export default {
           margin-left: -10px;
           .jobJoin{
             width: 140px;
-            height: 50px;
-            border-radius: 25px;
+            height: 30px;
+            border-radius: 15px;
             text-align: center;
-            line-height: 50px;
+            line-height: 30px;
             background: #cccccc;
-            @include font_size($font_medium_s);
+            font-size: 15px;
+            //@include font_size($font_medium_s);
             @include font_color()
           }
           .jobDetail{
             width: 140px;
-            height: 50px;
-            border-radius: 25px;
+            height: 30px;
+            border-radius: 15px;
             text-align: center;
-            line-height: 50px;
+            line-height: 30px;
             @include bg_color();
             margin-left: 20px;
-            @include font_size($font_medium_s);
+            font-size: 15px;
+            //@include font_size($font_medium_s);
             color: #FFFFFF;
           }
         }

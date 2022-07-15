@@ -38,7 +38,7 @@
   @import "../assets/css/mixin";
   .contentTabber{
     width: 100%;
-    height: 180px;
+    height: 120px;
     @include bg_sub_color();
     display: flex;
     justify-content: space-around;
@@ -49,7 +49,8 @@
       .title{
         text-align: center;
         /*line-height: 160px;*/
-        @include font_size($font_medium_s);
+        font-size: 15px;
+        //@include font_size($font_medium_s);
         @include font_color()
       }
       &.router-link-active{
@@ -60,18 +61,18 @@
       .div_box{
         position: relative;
         margin: auto;
-        width: 110px;
-        height: 110px;
-        border-radius: 55px;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
         text-align: center;
         img{
           position: absolute;
           left: 50%;
           top: 50%;
-          margin-left: -40px;
-          margin-top: -40px;
-          width: 80px;
-          height: 80px;
+          margin-left: -15px;
+          margin-top: -15px;
+          width: 30px;
+          height: 30px;
           //@include bg_color()
         }
 

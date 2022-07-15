@@ -104,7 +104,7 @@ export default {
     background: #f4f4f4;
     box-sizing: border-box;
     .header{
-      height:310px;
+      height:200px;
       .headerBox{
         border-radius: 5px;
         height: 100%;
@@ -113,27 +113,27 @@ export default {
         .userHeaderBg{
           position: absolute;
           left: 0;
-          top: -20px;
+          top: -10px;
           width: 100%;
           /*height: 250px;*/
         }
         .headerImg{
-          margin-top: 80px;
-          margin-left: 115px;
-          width: 60px;
-          height: 60px;
-          border-radius: 30px;
+          margin-top: 50px;
+          margin-left: 70px;
+          width: 70px;
+          height: 70px;
+          border-radius: 35px;
           z-index: 1;
           border: 2px solid #FFFFFF;
         }
         .headerName{
-          margin-top: 100px;
-          margin-left: 30px;
+          margin-top: 55px;
+          margin-left: 25px;
           height: 60px;
           line-height: 60px;
           z-index: 1;
           color: #666666;
-          font-size: 30px;
+          font-size: 22px;
           //@include font_size($font_large);
         }
       }
@@ -144,8 +144,8 @@ export default {
       justify-content: center;
       align-items: center;
       width: 90%;
-      height: 130px;
-      padding: 30px 5% 30px 5%;
+      height: 100px;
+      padding: 20px 5% 20px 5%;
       background: #FFFFFF;
       .centreLeft{
         width: 50%;
@@ -155,23 +155,24 @@ export default {
         overflow: hidden;
         display: flex;
         .userCentreName{
-          margin-top: 40px;
-          margin-left: 20px;
+          margin-top: 25px;
+          margin-left: 15px;
           font-weight: bold;
-          @include font_size($font_large);
+          font-size: 20px;
+          //@include font_size($font_large);
         }
         .userCentreNext{
-          margin-top: 40px;
-          margin-left: 3px;
-          width: 40px;
-          height: 40px;
+          margin-top: 25px;
+          /*margin-left: 5px;*/
+          width: 30px;
+          height: 30px;
         }
         .userCentreLeftImg{
           position: absolute;
-          right: -18px;
-          bottom: -40px;
-          width: 160px;
-          height: 160px;
+          right: -20px;
+          bottom: -30px;
+          width: 120px;
+          height: 120px;
           transform:rotate(20deg);
         }
       }
@@ -184,23 +185,24 @@ export default {
         overflow: hidden;
         display: flex;
         .userCentreName{
-          margin-top: 40px;
-          margin-left: 20px;
+          margin-top: 25px;
+          margin-left: 15px;
           font-weight: bold;
-          @include font_size($font_large);
+          font-size: 20px;
+          //@include font_size($font_large);
         }
         .userCentreNext{
-          margin-top: 40px;
-          margin-left: 3px;
-          width: 40px;
-          height: 40px;
+          margin-top: 25px;
+          /*margin-left: 5px;*/
+          width: 30px;
+          height: 30px;
         }
         .userCentreRightImg{
           position: absolute;
-          right: -18px;
-          bottom: -40px;
-          width: 160px;
-          height: 160px;
+          right: -20px;
+          bottom: -30px;
+          width: 120px;
+          height: 120px;
           transform:rotate(20deg);
         }
       }
@@ -212,29 +214,34 @@ export default {
       width: 100%;
       .tabsList{
         .tabItem{
-          height: 100px;
+          height: 72px;
           background: #FFFFFF;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          text-align: center;
           border-bottom:1px solid #000;
           padding: 0 30px;
           .tabItemName{
             display: flex;
+            text-align: center;
+            align-items: center;
             .tabItemNameIcon{
-              width: 50px;
-              height: 50px;
-              margin-right: 20px;
+              width: 40px;
+              height: 40px;
+
+              margin-right: 15px;
             }
             .tabItemNameTxt{
-              @include font_size($font_medium_s);
+              font-size: 18px;
+              //@include font_size($font_medium_s);
               line-height: 50px;
               height: 50px;
             }
           }
           .tabItemNext{
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height:40px;
           }
         }
       }

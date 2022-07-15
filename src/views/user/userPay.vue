@@ -133,7 +133,7 @@
   .card{
     width: 90%;
     margin-left: 5%;
-    margin-top: 50px;
+    margin-top: 20px;
     position: relative;
     .payNumb{
       width: 50%;
@@ -142,11 +142,11 @@
       top: 20px;
       height: 200px;
       .payText{
-        font-size: 40px;
+        font-size: 20px;
       }
       .payValue{
-        font-size: 50px;
-        margin-top: 50px;
+        font-size: 30px;
+        margin-top: 40px;
       }
     }
     .cardImg{
@@ -159,23 +159,25 @@
       margin-top: 20px;
       .cardBtnLeft{
         width: 50%;
-        height: 100px;
+        height: 60px;
         background: #22d3dd;
         text-align: center;
-        line-height: 100px;
+        line-height: 60px;
         color: #ffffff;
         border-bottom-left-radius: 10px;
         border-top-left-radius: 10px;
-        @include font_size($font_large);
+        font-size: 20px;
+        //@include font_size($font_large);
       }
       .cardBtnRight{
         width: 50%;
-        height: 100px;
+        height: 60px;
         background: #fb9e59;
         text-align: center;
-        line-height: 100px;
+        line-height: 60px;
         color: #ffffff;
-        @include font_size($font_large);
+        font-size: 20px;
+        //@include font_size($font_large);
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
       }
@@ -189,6 +191,7 @@
       width: 100%;
       height: 50px;
       line-height: 50px;
+      font-size: 20px;
       color: #616060;
     }
     .payHistoryItemBox{
@@ -197,7 +200,7 @@
       overflow: auto;
       .payHistoryItem1,.payHistoryItem{
         width: 100%;
-        height: 120px;
+        height: 66px;
         display: flex;
         justify-content: space-between;
         /*background: linear-gradient(90deg, #928d8d, #f4f4f4);*/
@@ -210,23 +213,27 @@
           display: flex;
           color: #000000;
           .itemImg{
-            width: 80px;
-            height: 80px;
+            width: 40px;
+            height: 40px;
+            /*margin-top: 5px;*/
             margin-left: 10px;
           }
           .ItemLeft{
             margin-left: 10px;
             .ItemLeftTxt{
-              @include font_size($font_medium);
+              font-size: 16px;
+              //@include font_size($font_medium);
             }
             .ItemLeftTime{
               margin-top: 10px;
-              @include font_size($font_medium);
+              font-size: 15px;
+              //@include font_size($font_medium);
             }
           }
         }
         .payHistoryItemRight{
-          @include font_size($font_large);
+          font-size: 20px;
+          //@include font_size($font_large);
           color: #000000;
         }
       }

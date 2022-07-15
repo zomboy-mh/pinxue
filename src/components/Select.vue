@@ -83,30 +83,31 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 80px;
+    height:60px;
     /*background: skyblue;*/
     li{
       text-align: center;
-      line-height: 80px;
+      line-height: 60px;
       display: flex;
-      @include font_size($font_medium_s);
+      font-size: 18px;
+      //@include font_size($font_medium_s);
       @include font_color();
       .icon{
         width: 0;                           /*设置宽高为0，所以div的内容为空，从才能形成三角形尖角*/
         height: 0;
-        margin-top: 32px;
+        margin-top: 25px;
         margin-left: 20px;
-        border-top: 13px solid #cccccc;
-        border-left: 13px solid transparent;    /*transparent 表示透明*/
-        border-right: 13px solid transparent;
+        border-top: 8px solid #cccccc;
+        border-left: 8px solid transparent;    /*transparent 表示透明*/
+        border-right: 8px solid transparent;
       }
       .iconStyle{
-        border-top: 13px solid red;
+        border-top: 8px solid red;
         transform: rotate(180deg);
         transition: 0.5s;
       }
       .iconStyle1{
-        border-top: 13px solid #cccccc;
+        border-top: 8px solid #cccccc;
         transform: rotate(360deg);
         transition: 0.5s;
       }
@@ -124,7 +125,7 @@
   }
   .tabbed_detail{
     position: fixed;
-    top: 182px;
+    top: 135px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -138,14 +139,15 @@
       padding: 2%;
       border-bottom:1px solid #000;
         .detail_button{
-          width: 120px;
-          height: 50px;
+          width: 80px;
+          height: 30px;
           margin: 10px;
           border-radius: 5px;
           text-align: center;
-          line-height: 50px;
+          line-height: 30px;
           border: 1px solid #000;
-          @include font_size($font_medium_s);
+          font-size: 18px;
+          //@include font_size($font_medium_s);
           @include font_color();
         }
       .detail_button_active{
@@ -158,11 +160,12 @@
       background: #f5f5f5;
       .detail_button{
         width: 100%;
-        height: 50px;
+        height: 30px;
         /*text-align: center;*/
         padding: 10px;
-        line-height: 50px;
-        @include font_size($font_medium);
+        line-height: 30px;
+        font-size: 20px;
+        //@include font_size($font_medium);
         @include font_color();
         border-bottom:1px solid #000;
       }
@@ -178,25 +181,27 @@
       /*justify-content: space-between;*/
       background: #f5f5f5;
       .bottom_reset{
-        width: 120px;
-        height: 50px;
+        width: 80px;
+        height: 30px;
         margin: 10px;
         border-radius: 5px;
         text-align: center;
-        line-height: 50px;
+        line-height: 30px;
         border: 1px solid #000;
-        @include font_size($font_medium_s);
+        font-size: 18px;
+        //@include font_size($font_medium_s);
         @include font_color();
       }
       .bottom_confirm{
-        width: 120px;
-        height: 50px;
+        width: 80px;
+        height: 30px;
         margin: 10px;
         border-radius: 5px;
         text-align: center;
-        line-height: 50px;
+        line-height: 30px;
         border: 1px solid #000;
-        @include font_size($font_medium_s);
+        font-size: 18px;
+        //@include font_size($font_medium_s);
         @include font_color();
       }
     }
