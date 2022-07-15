@@ -43,19 +43,25 @@ export default {
     },
     setUserDetail(){
       console.log("123",this.detailFrom.identity);
-      this.setNickName(this.detailFrom.nickName)
-      setUserDetail(this.detailFrom).then((res)=>{
-        console.log("保存",res)
-        if(res.code === 1000){
-          this.$message({
-            message: '保存成功',
-            type: 'success',
-            center: true,
-          });
-        }
-
-
+      this.$toast({
+        message: "保存成功",
+        type:"success",
+        iconSize:'100px'
       })
+
+      this.setNickName(this.detailFrom.nickName)
+      // setUserDetail(this.detailFrom).then((res)=>{
+      //   console.log("保存",res)
+      //   if(res.code === 1000){
+      //     this.$toast({
+      //       message: "保存成功",
+      //       type:"success",
+      //       iconSize:'100px'
+      //     })
+      //   }
+      //
+      //
+      // })
     }
   },
   props: {
@@ -77,7 +83,11 @@ export default {
 <style scoped lang="scss">
   @import "../../assets/css/variable";
   @import "../../assets/css/mixin";
-
+  .van-toast{
+    width: 200px;
+    font-size: 50px;
+    color:red
+  }
   .header{
     width: 100%;
     height: 100px;

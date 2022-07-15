@@ -115,14 +115,14 @@ export default {
           left: 0;
           top: -20px;
           width: 100%;
-          height: 360px;
+          /*height: 250px;*/
         }
         .headerImg{
           margin-top: 80px;
           margin-left: 115px;
-          width: 120px;
-          height: 120px;
-          border-radius: 60px;
+          width: 60px;
+          height: 60px;
+          border-radius: 30px;
           z-index: 1;
           border: 2px solid #FFFFFF;
         }
@@ -133,7 +133,8 @@ export default {
           line-height: 60px;
           z-index: 1;
           color: #666666;
-          @include font_size($font_large);
+          font-size: 30px;
+          //@include font_size($font_large);
         }
       }
 

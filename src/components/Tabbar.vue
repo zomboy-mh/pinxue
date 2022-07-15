@@ -30,7 +30,7 @@ export default {
   @import "../assets/css/mixin";
 .tabbar{
   width: 100%;
-  height: 90px;
+  height: 80px;
   @include bg_sub_color();
   display: flex;
   justify-content: space-around;
@@ -43,7 +43,8 @@ export default {
     position: relative;
     span{
       line-height: 130px;
-      @include font_size($font_medium_s);
+      font-size: 18px;
+      //@include font_size($font_medium_s);
       @include font_color()
     }
     &.router-link-active{

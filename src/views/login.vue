@@ -201,7 +201,7 @@
       position: absolute;
       left: 20px;
       top: 30px;
-      font-size: 50px;
+      font-size: 40px;
       color: #FFFFFF;
     }
 
@@ -209,14 +209,14 @@
       position: absolute;
       right: 20px;
       top: 30px;
-      font-size: 40px;
+      font-size: 30px;
       color: #FFFFFF;
     }
 
     .detailBox {
       width: 100%;
       /*background: red;*/
-      height: 750px;
+      height: 350px;
       position: relative;
       left: 0;
       top: 150px;
@@ -225,7 +225,7 @@
         width: 300px;
         height: 80px;
         line-height: 80px;
-        font-size: 60px;
+        font-size: 40px;
         color: #FFFFFF;
         margin-left: 40px;
       }
@@ -243,14 +243,14 @@
           display: flex;
           text-align: center;
           align-items: center;
-          width: 600px;
-          height: 100px;
-          line-height: 100px;
+          width: 400px;
+          height: 60px;
+          line-height:60px;
           background: rgba(255, 255, 255, 0.6);
           /*color: #000000;*/
           border-radius: 50px;
           border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 0 20px 0 20px;
+          padding: 0 10px 0 10px;
           margin-top: 20px;
         }
 
@@ -258,8 +258,8 @@
           height: 100px;
           line-height: 100px;
           /*width: 50px;*/
-          @include font_size($font_medium);
           text-align: center;
+          font-size: 20px;
           color: #000000;
         }
 
@@ -278,7 +278,7 @@
           margin: 0;
           height: 80px;
           line-height: 80px;
-          @include font_size($font_medium);
+          font-size: 20px;
           background: rgba(255, 255, 255, 0.01);
           /*color: #000000;*/
           border: none;
@@ -291,18 +291,18 @@
         }
 
         ::v-deep .el-form-item__content {
-          @include font_size($font_medium);
+          font-size: 25px;
         }
 
         ::v-deep .el-form-item__error {
-          @include font_size($font_medium);
+          font-size: 20px;
           color: #fd2c2c;
         }
       }
     }
 
     .loginBottom {
-      margin-top: 350px;
+      margin-top: 400px;
       /*position: absolute;*/
       /*bottom: 60px;*/
       /*left: 0;*/
@@ -311,7 +311,7 @@
       .loginTxt {
         width: 80%;
         margin-left: 10%;
-        font-size: 25px;
+        font-size: 20px;
         color: #cccccc;
         margin-top: 30px;
         text-align: center;
@@ -320,7 +320,7 @@
       .accountsLogin {
         width: 50%;
         margin-left: 25%;
-        font-size: 40px;
+        font-size: 30px;
         color: #cccccc;
         text-align: center;
         margin-top: 15px;
@@ -329,12 +329,12 @@
       .loginBtn {
         width: 80%;
         margin-left: 10%;
-        height: 80px;
-        line-height: 80px;
-        border-radius: 40px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 30px;
         background: linear-gradient(to right, #eccc88, #cf98ec, #63c2f1);
         color: #000000;
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
       }
     }
