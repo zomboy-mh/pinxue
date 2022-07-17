@@ -29,7 +29,12 @@
         </div>
         <div class="detailIdImg">
           <div class="idImgUp">
-            <van-uploader v-model="fileList" :deletable="false"  />
+            <van-uploader v-model="fileListUp" :deletable="true" max-count="1" />
+            <div>身份证正面照</div>
+          </div>
+          <div class="idImgUp">
+            <van-uploader v-model="fileListDown" :deletable="true" max-count="1"  />
+            <div>身份证背面照</div>
           </div>
         </div>
       </div>
@@ -60,9 +65,10 @@
         frontFileList: [
           { url: '../../assets/images/realIdUp.png' },
         ],
-        fileList:[
+        fileListUp:[
 
-        ]
+        ],
+        fileListDown:[]
       }
     },
 
@@ -204,22 +210,43 @@
       line-height: 50px;
       border-bottom: 1px solid #bdb2b2;
       font-size: 20px;
-      .idImgUp{
-        width: 120px;
-        height: 120px;
-        background: pink;
-        .preview-cover {
-          position: absolute;
-          bottom: 0;
-          box-sizing: border-box;
-          width: 100%;
-          padding: 4px;
-          color: #fff;
-          font-size: 12px;
-          text-align: center;
-          background: rgba(0, 0, 0, 0.3);
+      .detailItemTap{
+        line-height: 30px;
+        color: #909090;
+      }
+      .detailIdImg{
+        margin-top: 10px;
+
+        display: flex;
+        .idImgUp{
+          margin-right: 20px;
+          .van-uploader{
+            ::v-deep .van-uploader__preview-image{
+              width: 120px;
+              height: 120px;
+            }
+            ::v-deep .van-uploader__upload{
+              width: 120px;
+              height: 120px;
+            }
+           ::v-deep .van-uploader__upload-icon{
+              font-size: 50px;
+            }
+          }
+          .preview-cover {
+            position: absolute;
+            bottom: 0;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 4px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+          }
         }
       }
+
 
     }
   }
