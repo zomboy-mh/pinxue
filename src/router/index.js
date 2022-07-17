@@ -55,6 +55,11 @@ const userPay = (resolve) => {
     resolve(module)
   })
 }
+const userReal = (resolve) => {
+  import('../views/user/userReal').then((module) => {
+    resolve(module)
+  })
+}
 Vue.use(VueRouter)
 
 const routes = [
@@ -96,6 +101,10 @@ const routes = [
       {
         path: 'userPay/',
         component:userPay
+      },
+      {
+        path: 'userReal/',
+        component:userReal
       }
     ]
   }

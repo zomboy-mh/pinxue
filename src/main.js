@@ -8,9 +8,10 @@ import './assets/css/base.scss'
 import { Row, Button, Select , Descriptions,DescriptionsItem, Dropdown, Tag, Option,
 DatePicker, Input,Tabs,TabPane,Form,FormItem,Col,Upload,Message} from 'element-ui'
 import VueLazyload from 'vue-lazyload'
-import {  Toast, } from 'vant';
+import {  Toast, Uploader} from 'vant';
 import 'vant/es/toast/style';
 Vue.prototype.$toast = Toast
+Vue.use(Uploader)
 // Vue.use(ConfigProvider)
 
 Vue.use(VueLazyload, {

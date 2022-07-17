@@ -187,7 +187,7 @@
 
   .detailBox {
     width: 96%;
-    margin: 10px 3% 100px 3%;
+    margin: 10px 2% 100px 2%;
     background: #FFFFFF;
     border-radius: 5px;
 
@@ -242,7 +242,6 @@
     }
 
     .detailItem {
-      width: 96%;
       padding: 12px;
       height: 50px;
       display: flex;

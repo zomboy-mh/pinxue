@@ -1,12 +1,14 @@
 <template>
   <div class="detail">
-    <userHeader :title="headerName"></userHeader>
+    <userHeader :title="headerName" :detailFrom="detailFrom"></userHeader>
     <div class="card">
       <img class="cardImg" src="../../assets/images/userPayCardBg.png" alt="">
       <div class="payNumb">
           <div class="payText">余额</div>
           <div class="payValue">1000RMB</div>
+
       </div>
+      <div class="userRealBtn" @click="goUserReal">前往实名认证 ></div>
       <div class="cardBtn">
         <div class="cardBtnLeft">充值</div>
         <div class="cardBtnRight">提现</div>
@@ -93,7 +95,8 @@
     name: "userPay",
     data: function () {
       return {
-        headerName: '我的钱包'
+        headerName: '我的钱包',
+        detailFrom:{}
       }
     },
     // 计算属性 类似于 data 概念
@@ -101,7 +104,11 @@
     // 监控 data 中的数据变化
     watch: {},
     // 方法集合
-    methods: {},
+    methods: {
+      goUserReal(){
+        this.$router.push('/user/userReal/')
+      }
+    },
     // 生命周期 - 创建完成（可以访问当前this 实例）
     created() {
     },
@@ -148,6 +155,20 @@
         font-size: 30px;
         margin-top: 40px;
       }
+
+    }
+    .userRealBtn{
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      padding: 0 15px;
+      height: 30px;
+      border-radius: 15px;
+      font-size: 18px;
+      line-height: 30px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(90deg, #d70f7d, #2d0ac9);
     }
     .cardImg{
       width: 100%;
