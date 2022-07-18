@@ -182,6 +182,7 @@
         width: 50%;
         height: 60px;
         background: #22d3dd;
+        /*background: #d70f7d;*/
         text-align: center;
         line-height: 60px;
         color: #ffffff;
@@ -194,6 +195,7 @@
         width: 50%;
         height: 60px;
         background: #fb9e59;
+        /*background: #2d0ac9;*/
         text-align: center;
         line-height: 60px;
         color: #ffffff;
@@ -225,7 +227,7 @@
         display: flex;
         justify-content: space-between;
         /*background: linear-gradient(90deg, #928d8d, #f4f4f4);*/
-        background: linear-gradient(90deg, #fb9e59, #f4f4f4);
+        background: linear-gradient(90deg, #9ca3bb, #f4f4f4);
         align-items: center;
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
@@ -259,7 +261,7 @@
         }
       }
       .payHistoryItem1{
-        background: linear-gradient(90deg,#f4f4f4 ,#22d3dd);
+        background: linear-gradient(90deg, #9ca3bb, #f4f4f4);
       }
     }
 

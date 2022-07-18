@@ -161,19 +161,21 @@
         })
       },
       getPsLogin(){
-        getPsLogin({
-          phone:this.dynamicValidateForm.phone,
-          password:this.dynamicValidateForm.password,
-        }).then((res)=>{
-          if(res.code === 1000){
-            console.log('登录',res)
-            this.setToken(res.data.token)
-            this.setNickName(res.data.detail.nickName)
-            this.setUserImageUrl(res.data.detail.avatar ? res.data.detail.avatar.url : '');
-            this.setUserId(res.data.detail.id)
-            this.$router.push('/user')
-          }
-        })
+        this.$router.push('/user')
+            this.setToken('res.data.token')
+        // getPsLogin({
+        //   phone:this.dynamicValidateForm.phone,
+        //   password:this.dynamicValidateForm.password,
+        // }).then((res)=>{
+        //   if(res.code === 1000){
+        //     console.log('登录',res)
+        //     this.setToken(res.data.token)
+        //     this.setNickName(res.data.detail.nickName)
+        //     this.setUserImageUrl(res.data.detail.avatar ? res.data.detail.avatar.url : '');
+        //     this.setUserId(res.data.detail.id)
+        //     this.$router.push('/user')
+        //   }
+        // })
       },
       getDelete(){
         getDelete().then((res)=>{
