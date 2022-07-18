@@ -159,21 +159,15 @@
 <style scoped lang="scss">
   @import "../../assets/css/variable";
   @import "../../assets/css/mixin";
-  .detail {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fcf6ee;
+  @import "../../assets/css/main";
+
     .detailBox{
       position: fixed;
-      top: 80px;
+      top: 60px;
       bottom: 0;
       left: 0;
       right: 0;
       overflow: auto;
-      margin-bottom: 90px;
       .head{
         width: 94%;
         padding: 3%;
@@ -362,8 +356,5 @@
         }
       }
     }
-
-  }
-
 
 </style>

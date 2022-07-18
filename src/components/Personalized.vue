@@ -37,6 +37,7 @@ export default {
   methods: {
     selectItem (id) {
       console.log(id)
+
       this.$emit('select', id)
     }
   }

@@ -19,7 +19,8 @@ export default {
       disableTouch: false,
       disableMouse: true,
       click:true,
-      taps:true
+      taps:true,
+      preventDefault: false
     })
     // setTimeout(() => {
     //   console.log(this.iscroll.maxScrollY)
@@ -31,10 +32,7 @@ export default {
     // motationlist：发生变化的数组
     // observer:观察者
     const observer = new MutationObserver((motationList, observer) => {
-      console.log('sss', motationList)
-      console.log(this.iscroll.maxScrollY)
       this.iscroll.refresh()
-      console.log(this.iscroll.maxScrollY)
     })
     // // 2.告诉观察这对象外卖需要观察什么内容
     const config = {

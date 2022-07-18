@@ -8,7 +8,7 @@
           <div class="payValue">1000RMB</div>
 
       </div>
-      <div class="userRealBtn" @click="goUserReal">前往实名认证 ></div>
+      <div class="userRealBtn" @click="goUserReal">已认证 ></div>
       <div class="cardBtn">
         <div class="cardBtnLeft">充值</div>
         <div class="cardBtnRight">提现</div>

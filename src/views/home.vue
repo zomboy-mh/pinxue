@@ -1,14 +1,10 @@
 <template>
   <div class="home">
-    <ScrollView>
-      <div>
-        <Banner :banners="banners"></Banner>
-        <ContentTabber></ContentTabber>
-        <Personalized :Personalized="Personalized" :title="'日结推荐'" @select="fatherSelectItem"></Personalized>
-        <Personalized :Personalized="partTime" :title="'全职推荐'"></Personalized>
-        <JobList :jobList="jobList"></JobList>
-      </div>
-    </ScrollView>
+      <Banner :banners="banners"></Banner>
+      <ContentTabber></ContentTabber>
+      <Personalized :Personalized="Personalized" :title="'日结推荐'" @select="fatherSelectItem"></Personalized>
+      <Personalized :Personalized="partTime" :title="'全职推荐'"></Personalized>
+      <JobList :jobList="jobList"></JobList>
     <router-view></router-view>
   </div>
 </template>
@@ -26,7 +22,6 @@
       Banner,
       Personalized,
       JobList,
-      ScrollView,
       ContentTabber
     },
     data() {
@@ -230,6 +225,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
+    overflow: auto;
   }
 </style>

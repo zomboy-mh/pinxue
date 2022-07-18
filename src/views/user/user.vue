@@ -23,7 +23,7 @@
       </div>
   </div>
   <div class="bottom">
-      <div class="tabsList" v-for="(item,index) in tabsList" :key="index">
+      <div class="tabsList" v-for="(item,index) in tabsList" :key="index"> 
         <div class="tabItem" @click="userDetailPath(index)">
           <div class="tabItemName">
             <img class="tabItemNameIcon" :src="item.tabItemNameIcon" alt="">
@@ -82,8 +82,7 @@ export default {
     userDetailPath(index) {
       if (index === 0) {
         this.$router.push('/user/userDetail/')
-      } else if(index === 1)
-      {
+      } else if(index === 1){
 
       }
     },
